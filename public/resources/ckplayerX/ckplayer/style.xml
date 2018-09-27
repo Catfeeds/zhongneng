@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ckplayer>
+	<!--播放器全局背景设置，支持设置背景颜色，背景图片，以及背景透明度-->
+	<background>
+		<backgroundColor>0x000000</backgroundColor><!--背景颜色-->
+		<backgroundImg></backgroundImg><!--背景图片-->
+		<alpha>0.5</alpha><!--背景透明度-->
+		<stretched>3</stretched><!--拉伸方式，0=原始大小，1=自动缩放，2=只有当元件的宽或高大于播放器宽高时才进行缩放，3=参考播放器宽高，4=宽度参考播放器宽、高度自动，5=高度参考播放器高、宽度自动-->
+		<align>center</align><!--水平对齐方式，left,center,right-->
+		<vAlign>middle</vAlign><!--垂直对齐方式，top,middle,bottom-->
+		<spacingLeft>0</spacingLeft><!--左方预留间距-->
+		<spacingTop>0</spacingTop><!--上方预留间距-->
+		<spacingRight>0</spacingRight><!--右方预留间距-->
+		<spacingBottom>0</spacingBottom><!--下方预留间距-->
+	</background>
+	<!--控制栏的相关设置，包含背景，操作按钮，音量调节，进度调节-->
+	<controlBar>
+		<align>left</align><!--水平对齐方式-->
+		<vAlign>bottom</vAlign><!--垂直对齐方式-->
+		<width>100%</width><!--宽度，支持百分比和固定像素-->
+		<height>38</height><!--高度，支持百分比和固定像素-->
+		<offsetX>0</offsetX><!--水平偏移像素-->
+		<offsetY>-38</offsetY><!--垂直偏移像素-->
+		<

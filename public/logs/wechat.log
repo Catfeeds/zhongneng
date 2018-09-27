@@ -1,0 +1,12 @@
+2018-07-11 01:46:24 > DEBUG > Pre Order: ["pay/unifiedorder",{"appid":"wxb3fxxxxxxxxxxx","mch_id":"145776xxxx","nonce_str":"2SwebbrSCN650oBR","notify_url":"http://yanda.net.cn","sign":"DDB535F3AF92CDCBA3F54109531581F6","trade_type":"JSAPI","spbill_create_ip":"127.0.0.1","out_trade_no":"201807110121460161242","body":"订单支付","total_fee":29900,"openid":"onkVf1FjWS5SBxxxxxxxx"}] []
+
+2018-07-11 01:46:24 > DEBUG > Request To Wechat Api ["https://api.mch.weixin.qq.com/pay/unifiedorder",{"appid":"wxb3fxxxxxxxxxxx","mch_id":"145776xxxx","nonce_str":"2SwebbrSCN650oBR","notify_url":"http://yanda.net.cn","sign":"DDB535F3AF92CDCBA3F54109531581F6","trade_type":"JSAPI","spbill_create_ip":"127.0.0.1","out_trade_no":"201807110121460161242","body":"订单支付","total_fee":29900,"openid":"onkVf1FjWS5SBxxxxxxxx"}] []
+
+2018-07-13 21:57:11 > DEBUG > Pre Order: ["pay/unifiedorder",{"appid":"wxb3fxxxxxxxxxxx","mch_id":"145776xxxx","nonce_str":"zAIDwLqBzh6s5xdZ","notify_url":"http://yanda.net.cn","sign":"CA2B9A1CB0A4C0EE16A2544110F0C74F","trade_type":"JSAPI","spbill_create_ip":"127.0.0.1","out_trade_no":"201807132157110163886","body":"订单支付","total_fee":29900,"openid":"onkVf1FjWS5SBxxxxxxxx"}] []
+
+2018-07-13 21:57:11 > DEBUG > Request To Wechat Api ["https://api.mch.weixin.qq.com/pay/unifiedorder",{"appid":"wxb3fxxxxxxxxxxx","mch_id":"145776xxxx","nonce_str":"zAIDwLqBzh6s5xdZ","notify_url":"http://yanda.net.cn","sign":"CA2B9A1CB0A4C0EE16A2544110F0C74F","trade_type":"JSAPI","spbill_create_ip":"127.0.0.1","out_trade_no":"201807132157110163886","body":"订单支付","total_fee":29900,"openid":"onkVf1FjWS5SBxxxxxxxx"}] []
+
+2018-07-14 16:10:30 > DEBUG > Pre Order: ["pay/unifiedorder",{"appid":"wxb3fxxxxxxxxxxx","mch_id":"145776xxxx","nonce_str":"xgLFIejcPDDoRaca","notify_url":"http://yanda.net.cn","sign":"E0094410870C2ABCBDB2D6C60F0F07FB","trade_type":"JSAPI","spbill_create_ip":"127.0.0.1","out_trade_no":"201807141610290151129","body":"订单支付","total_fee":29900,"openid":"wx3e2f2acc04f5e83e"}] []
+
+2018-07-14 16:10:30 > DEBUG > Request To Wechat Api ["https://api.mch.weixin.qq.com/pay/unifiedorder",{"appid":"wxb3fxxxxxxxxxxx","mch_id":"145776xxxx","nonce_str":"xgLFIejcPDDoRaca","notify_url":"http://yanda.net.cn","sign":"E0094410870C2ABCBDB2D6C60F0F07FB","trade_type":"JSAPI","spbill_create_ip":"127.0.0.1","out_trade_no":"201807141610290151129","body":"订单支付","total_fee":29900,"openid":"wx3e2f2acc04f5e83e"}] []
+
