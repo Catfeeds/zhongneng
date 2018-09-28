@@ -16,7 +16,11 @@
         @show
         @section('style')
             <link type="text/css" rel="stylesheet" href="{{asset('resources/mobile/css/swiper.css')}}?version={{env('VERSION')}}" />
+            <link type="text/css" rel="stylesheet" href="{{asset('resources/mobile/css/photoswipe.css')}}?version={{env('VERSION')}}" />
+            <link type="text/css" rel="stylesheet" href="{{asset('resources/mobile/css/default-skin/default-skin.css')}}?version={{env('VERSION')}}" />
             <link type="text/css" rel="stylesheet" href="{{asset('resources/mobile/css/style.css')}}?version={{env('VERSION')}}" />
+
+            
             <script type="text/javascript" src="{{asset('resources/mobile/js/jquery.js')}}?version={{env('VERSION')}}"></script>
         @show
     </head>

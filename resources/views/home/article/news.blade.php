@@ -6,17 +6,17 @@
     @include('home.layouts.top_banner')
     <div class="main">
         @include('home.layouts.sub_nav')
-        <div class="case_list">
+        <div class="index_5 news">
             <ul class="clearfix">
                 @foreach($article_list as $v)
-                <li><a href="{{url('article',[$v['id']])}}" class="case_box">
+                <li><a href="{{url('article',[$v['id']])}}">
                     <div class="pic"><img src="{{asset($v['img'])}}" alt="{{$v['alt']}}"></div>
-                    <div class="w">
-                        <h3>{{$v['title']}}</h3>
-                        <p class="dot">
-                            项目地点：{{$v['address']}}<br />
-                            项目简介：{!!nl2br($v['desc'])!!}
-                        </p>
+                    <div class="w clearfix">
+                        <div class="time"><b>{{date("m/d",strtotime($v['add_time']))}}</b>{{date("Y",strtotime($v['add_time']))}}</div>
+                        <div class="fr">
+                            <h3>{{$v['title']}}</h3>
+                            <p class="dot">{!!nl2br($v['desc'])!!}</p>
+                        </div>
                     </div>
                 </a></li>
                 @endforeach

@@ -25,26 +25,14 @@ class Apply extends Model
         if(isset($attributes['phone'])){
         	$info->phone = $attributes['phone'];
         }
-        if(isset($attributes['age'])){
-            $info->age = $attributes['age'];
+        if(isset($attributes['email'])){
+            $info->email = $attributes['email'];
         }
-        if(isset($attributes['sex'])){
-        	$info->sex = $attributes['sex'];
-        }
-        if(isset($attributes['income'])){
-            $info->income = $attributes['income'];
-        }
-        if(isset($attributes['fine_time'])){
-            $info->fine_time = $attributes['fine_time'];
+        if(isset($attributes['remark'])){
+        	$info->remark = $attributes['remark'];
         }
         if(isset($attributes['address'])){
-        	$info->address = $attributes['address'];
-        }
-        if(isset($attributes['years'])){
-        	$info->years = $attributes['years'];
-        }
-        if(isset($attributes['cate_id'])){
-        	$info->cate_id = $attributes['cate_id'];
+            $info->address = $attributes['address'];
         }
         $info->save();
     	return $info;

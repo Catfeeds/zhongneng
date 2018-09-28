@@ -15,7 +15,10 @@
             <meta name="description" content="@if(isset($head_description)){{$head_description}}@else{{ConfigGet('site_description')}}@endif">
         @show
         @section('style')
+            <link type="text/css" rel="stylesheet" href="{{asset('resources/home/css/photoswipe.css')}}?version={{env('VERSION')}}" />
+            <link type="text/css" rel="stylesheet" href="{{asset('resources/home/css/default-skin/default-skin.css')}}?version={{env('VERSION')}}" />
             <link type="text/css" rel="stylesheet" href="{{asset('resources/home/css/style.css')}}?version={{env('VERSION')}}" />
+
             <script type="text/javascript" src="{{asset('resources/home/js/jquery.js')}}?version={{env('VERSION')}}"></script>
         @show
     </head>

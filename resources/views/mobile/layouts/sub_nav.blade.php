@@ -1,3 +1,4 @@
+@if($sub_category&&$sub_category->count())
 <div class="swiper-container nav">
 	<div class="swiper-wrapper">
 		@foreach($sub_category as $k=>$v)
@@ -5,3 +6,4 @@
 		@endforeach
 	</div>
 </div>
+@endif

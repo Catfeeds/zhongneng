@@ -45,5 +45,7 @@ return [
 		'jd_title'=>"京东旗舰店名称",
 		'fax'=>"传真",
 		'hotline'=>"售后热线",
+		'gs_title'=>"公司名称",
+		'gs_en_title'=>"公司英文名称",
 	],
 ];

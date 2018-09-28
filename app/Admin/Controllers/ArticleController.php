@@ -155,6 +155,7 @@ class ArticleController extends Controller
         	});
         	
             $form->hidden('id','ID');
+            $form->hidden('old_img','old_img');
             $form->text('title','标题')->rules('required');
             // $form->text('title2','副标题');
             // $form->file('file','资料上传')->move('/uploads/article/'.date('Ymd'));
@@ -244,6 +245,7 @@ class ArticleController extends Controller
                 $width = trans('template.template_width.'.$caregory_info['template'])>0?trans('template.template_width.'.$caregory_info['template']):null;
                 $height = trans('template.template_height.'.$caregory_info['template'])>0?trans('template.template_height.'.$caregory_info['template']):null;
                 if($width>0||$height>0){
+                    $form->old_img = Image($form->img,null,null,"uploads/article/".date("Ymd")."/");
                     $form->img = Image($form->img,$width,$height,"uploads/article/".date("Ymd")."/");
                 }
                 if($form->file){

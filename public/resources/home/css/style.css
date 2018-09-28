@@ -1456,7 +1456,8 @@ img{
 	vertical-align: top;
 	margin: 0 15px;
 }
-.news_det .w p{
+/*.news_det .w p{*/
+.news_det .w{
 	font-size: 14px;
 	line-height: 30px;
 	padding-top: 20px;

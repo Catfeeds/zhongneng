@@ -93,67 +93,30 @@ class ArticleController extends Controller
         // }
 
         //根据模板获取相应数据
-        // $recommend_cate = $cate_info['id'];
-        // $take = 20;
-        // switch ($cate_info['template']) {
-        //     case 'news':
-        //         $recommend_cate = $cate_info['id'];
-        //         $take = 20;
-        //         break;
-        // }
+        if(isMobile()){
+            $paginate = 6;
+        }else{
+            $paginate = 8;
+        }
         switch ($cate_info['template']) {
-            case 'index2'://普通主页
-            case 'product'://普通主页
-            case 'service'://普通主页
-            case 'about'://普通主页
-                $cate_list = ArticleCategory::orderBy('order',"ASC")->where('parent_id',$cate_info['id'])->get();//获取一级分类
-                foreach($cate_list as $k=>$v){
-                    $v['article'] = Article::ArticleList([
-                        'cate_id'=>$v['id'],
-                        'paginate'=>0,
-                    ]);
-                }
-                $assign['cate_list'] = $cate_list;
-                $user_info = Auth::user();
-                $assign['collection_on'] = Collection::CollectionOn([
-                    'user_id'=>$user_info['id'],
-                    'type'=>3,
-                    'article_id'=>$cate_info['id'],
-                ]);
-                $assign['collection_id'] = $cate_info['id'];
-                $assign['collection_type'] = 3;
-                break;
-            case 'problem'://问题
-                $c_sub = ArticleCategory::where('parent_id',$cate_info['id'])->orderBy('order',"ASC")->first();
-                if($c_sub){
-                    return redirect(URL($c_sub['url']));
-                }
-                if(isMobile()){
-                    $cate_list = ArticleCategory::orderBy('order',"ASC")->where('parent_id',$cate_info['parent_id'])->get();//获取一级分类
-                    foreach($cate_list as $k=>$v){
-                        $v['article'] = Article::ArticleList([
-                            'cate_id'=>$v['id'],
-                            'paginate'=>0,
-                        ]);
-                    }
-                    $assign['cate_list'] = $cate_list;
-                }else{
-                    $article_list = Article::ArticleList([
-                        'cate_id'=>$cate_info['id'],
-                        'paginate'=>0,
-                    ]);
-                    $assign['article_list'] = $article_list;
-                    //获取同级分类
-                    $two_category = ArticleCategory::orderBy('order',"ASC")->where('parent_id',$cate_info['parent_id'])->get();//
-                    $assign['two_category'] = $two_category;
-                }
-                break;
             case 'anli':
+            case 'news':
+            case 'business':
                 if(isMobile()){
                     $paginate = 4;
                 }else{
                     $paginate = 9;
                 }
+                break;
+        }
+        switch ($cate_info['template']) {
+            case 'detail'://普通主页
+                
+                break;
+            case 'anli':
+            case 'news':
+            case 'business':
+            case 'honor':
                 //获取列表数据
                 $article_list = Article::ArticleList([
                     'cate_id_in' => sub_cate_in($cate_info['id']),
@@ -172,7 +135,7 @@ class ArticleController extends Controller
      * 文章详情
      */
     public function article_info(Request $request,$id){
-        // Article::where("id",$id)->increment('click',1);
+        Article::where("id",$id)->increment('click',1);
         $info = Article::with(['ArticleCategoryTo','MoreImageMany','MoreVideoMany'])->find($id);
         if (!$info) {
             abort(404);
@@ -267,24 +230,26 @@ class ArticleController extends Controller
                 break;
         }
         switch ($cate_info['template']) {
-            case 'news'://新闻列表
-            case 'video'://视频
+            case 'news'://新闻
+            case 'anli':
+            case 'business':
+            // case 'video'://视频
             // case 'guimi-group'://新闻列表
-            case 'product'://产品
+            // case 'product'://产品
             // case 'cases'://案例
             // case 'teacher'://师资
                 //获取列表
-                $article_recommend_list = Article::ArticleList([
-                    'cate_id'=>$cate_info['id'],
-                    'order'=>'is_top',
-                    'sort'=>'DESC',
-                    'take'=>6,
-                    'no_id'=>$info['id'],
-                ]);
-                $assign['article_recommend_list'] = $article_recommend_list;
+                // $article_recommend_list = Article::ArticleList([
+                //     'cate_id'=>$cate_info['id'],
+                //     'order'=>'is_top',
+                //     'sort'=>'DESC',
+                //     'take'=>6,
+                //     'no_id'=>$info['id'],
+                // ]);
+                // $assign['article_recommend_list'] = $article_recommend_list;
 
                 //获取上下篇
-                $article_all = Article::select('id')->where('cate_id',$info['cate_id'])->orderBy("add_time","DESC")->orderBy("id","DESC")->get();
+                $article_all = Article::select('id')->where('cate_id',$info['cate_id'])->orderBy('sort','DESC')->orderBy("add_time","DESC")->orderBy("id","DESC")->get();
                 $prev_id = 0;
                 $next_id = 0;
                 foreach($article_all as $k=>$v){
@@ -300,16 +265,16 @@ class ArticleController extends Controller
                 $assign['next_article'] = $next_article;
 
                 //获取右侧推荐
-                if(!$info['tag']){
-                    $info['tag'] = -1;
-                }
-                $art_1 = \App\Models\ArticleCategory::select("article.*")->where("template","news")->leftjoin("article","article.cate_id","=","article_category.id")->where('tag',$info['tag'])->where('article.id',"<>",$info['id'])->orderBy('sort','DESC')->orderBy("add_time","DESC")->orderBy("id","DESC")->take(3)->get();
+                // if(!$info['tag']){
+                //     $info['tag'] = -1;
+                // }
+                // $art_1 = \App\Models\ArticleCategory::select("article.*")->where("template","news")->leftjoin("article","article.cate_id","=","article_category.id")->where('tag',$info['tag'])->where('article.id',"<>",$info['id'])->orderBy('sort','DESC')->orderBy("add_time","DESC")->orderBy("id","DESC")->take(3)->get();
                 // $art_1 = Article::ArticleList([
                 //     'tag'=>$info['tag'],
                 //     'sort'=>'DESC',
                 //     'take'=>3,
                 // ]);
-                $assign['art_1'] = $art_1;
+                // $assign['art_1'] = $art_1;
                 break;
         }
 
