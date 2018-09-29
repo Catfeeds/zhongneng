@@ -3,9 +3,11 @@
         <div class="htop">
             <div class="layout clearfix">
                 <span>{{ConfigGet('top_desc')}}</span>
-                <a href="#" class="s_ic s_ic3"></a>
-                <a href="#" class="s_ic s_ic2"></a>
-                <a href="#" class="s_ic"></a>
+                <div class="bdsharebuttonbox fenxian">
+                    <a href="#" class="s_ic s_ic3 bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+                    <a href="#" class="s_ic s_ic2 bds_weixin"  data-cmd="weixin" title="分享到微信"></a>
+                    <a href="#" class="s_ic bds_tqq" data-cmd="sqq" title="分享到腾讯QQ"></a>
+                </div>
                 <p>{{ConfigGet('tel')}}</p>
             </div>
         </div>
@@ -32,3 +34,19 @@
         </div>
     </div>
 @show
+<script type="text/javascript">
+    window._bd_share_config={
+        "common":{
+            "bdSnsKey":{},
+            "bdText":"",
+            "bdMini":"2",
+            "bdMiniList":false,
+            "bdPic":"",
+            "bdStyle":"2",
+            "bdSize":"16"
+        },"share":{
+            'bdCustomStyle':'{{asset('resources/home/css/style.css')}}?version={{env('VERSION')}}'
+        },
+    };
+    with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
