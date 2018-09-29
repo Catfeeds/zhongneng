@@ -1,16 +1,19 @@
-@extends('home.layouts.app')
+@extends('mobile.layouts.app')
 @section('style')
     @parent
 @endsection
 @section('content')
 <?php 
-$banner = ads_image(35);
+$banner = ads_image(36);
  ?>
 @if(isset($banner)&&$banner->count())
-<div class="banner">
-    @foreach($banner as $v)
-    <div><a @if(!empty($v['url']))href="{{URL($v['url'])}}"@endif><img src="{{asset($v['image'])}}" alt="{{$v['alt']}}"></a></div>
-    @endforeach
+<div class="swiper-container banner">
+    <div class="swiper-wrapper">
+        @foreach($banner as $v)
+        <div><a @if(!empty($v['url']))href="{{URL($v['url'])}}"@endif><img src="{{asset($v['image'])}}" alt="{{$v['alt']}}"></a></div>
+        @endforeach
+    </div>
+    <div class="swiper-pagination"></div>
 </div>
 @endif
 <?php 
@@ -23,63 +26,41 @@ $banner = ads_image(35);
     ]);
 ?>
 <div class="index_1">
-    <div class="layout">
-        <div class="title">{{$index_1['title']}}<p>{{$index_1['en_title']}}</p></div>
-        <div class="pic_show1">
-            @foreach($index_1['article'] as $v)
-            <li><a href="{{url('article',[$v['id']])}}" class="yw_box">
-                <div class="pic"><img src="{{asset($v['img'])}}" alt="{{$v['alt']}}"><span><em>查看详情</em></span></div>
-                <div class="w">
-                    <h3>{{$v['title']}}</h3>
-                    <p class="dot">{!!nl2br($v['desc'])!!}</p>
-                </div>
-            </a></li>
-            @endforeach
-        </div>
-    </div>
+    <div class="title">{{$index_1['title']}}<p>{{$index_1['en_title']}}</p></div>
+    <ul class="ser_list">
+        @foreach($index_1['article'] as $v)
+        <li><a href="{{url('article',[$v['id']])}}" class="clearfix">
+            <div class="pic"><img src="{{asset($v['img'])}}" alt="{{$v['alt']}}"><span></span></div>
+            <div class="w">
+                <h3>{{$v['title']}}</h3>
+                <p class="dot">{!!nl2br($v['desc'])!!}</p>
+            </div>
+        </a></li>
+        @endforeach
+    </ul>
     <a href="{{URL('category',[$index_1['id']])}}" class="more">more</a>
 </div>
 <?php 
     //获取推荐文章
     $index_2 = \App\Models\ArticleCategory::find(1);
-    $index_2['child'] =  \App\Models\ArticleCategory::where("parent_id",1)->orderBy("order","ASC")->orderBy("id","ASC")->get();
-    foreach($index_2['child'] as $v){
-        $v['article'] = \App\Models\Article::ArticleList([
-            'cate_id_in' => sub_cate_in($v['id']),
-            'take'=>9,
-            'is_top'=>1,
-        ]);
-    }
+    $index_2['article'] = \App\Models\Article::ArticleList([
+        'cate_id_in' => sub_cate_in(1),
+        'take'=>6,
+        'is_top'=>1,
+    ]);
 ?>
 <div class="index_2">
-    <div class="layout">
-        <div class="title">{{$index_2['title']}}<p>{{$index_2['en_title']}}</p></div>
-        <div class="hd">
-            <ul class="clearfix">
-                @foreach($index_2['child'] as $k=>$v)
-                <li @if($k==0) class="on" @endif>{{$v['title']}}</li>
-                @endforeach
-            </ul>
-        </div>
-        <div class="bd">
-            @foreach($index_2['child'] as $k=>$v_c)
-            <div class="pic_show2 @if($k==0) on @endif">
-                @foreach($v_c['article'] as $v)
-                <div><a href="{{url('article',[$v['id']])}}" class="case_box">
-                    <div class="pic"><img src="{{asset($v['img'])}}" alt="{{$v['alt']}}"></div>
-                    <div class="w">
-                        <h3>{{$v['title']}}</h3>
-                        <p class="dot">
-                            项目地点：{{$v['address']}}<br />
-                            项目简介：{!!nl2br($v['desc'])!!}
-                        </p>
-                    </div>
-                </a></div>
-                @endforeach
-            </div>
-            @endforeach
-        </div>
-    </div>
+    <div class="title">{{$index_2['title']}}<p>{{$index_2['en_title']}}</p></div>
+    <ul class="clearfix case_list">
+        @foreach($index_2['article'] as $v)
+        <li><a href="{{url('article',[$v['id']])}}">
+            <div class="pic"><img src="{{asset($v['img'])}}" alt="{{$v['alt']}}"></div>
+            <h3>{{$v['title']}}</h3>
+            <p>{{$v['ArticleCategoryTo']['title']}}</p>
+        </a></li>
+        @endforeach
+    </ul>
+    <a href="{{URL('category',[$index_2['id']])}}" class="more">more</a>
 </div>
 <?php 
     //获取推荐文章
@@ -87,116 +68,39 @@ $banner = ads_image(35);
     $index_3_i1 = ads_image(37);
 ?>
 <div class="index_3">
-    <div class="layout clearfix">
-        <div class="fl">
-            <div class="title">{{$index_3['title']}}<p>{{$index_3['en_title']}}</p></div>
-            <div class="w">
-                <p class="dot">
-                    {!!nl2br($index_3['cat_desc'])!!}
-                </p>
-                <a href="{{URL('category/8')}}" class="more">more</a>
-                <ul class="clearfix">
-                    <li class="li1"><a href="{{url('category/7')}}">荣誉资质<i></i></a></li>
-                    <li class="li2"><a href="#"><i></i>发展历程</a></li>
-                    <li class="li3"><a href="#">企业实景<i></i></a></li>
-                    <li class="li4"><a href="#"><i></i>企业文化</a></li>
-                </ul>
-            </div>
-        </div>
-        @if(!empty($index_3_i1[0]))
-        <div class="pich"><a @if(!empty($index_3_i1[0]['url']))href="{{URL($index_3_i1[0]['url'])}}"@endif><img src="{{asset($index_3_i1[0]['image'])}}" alt="{{$index_3_i1[0]['alt']}}"><b></b></a></div>
-        @endif
+    <div class="title">{{$index_3['title']}}<p>{{$index_3['en_title']}}</p></div>
+    <div class="w">
+        {!!nl2br($index_3['cat_desc'])!!}
     </div>
+    <a href="{{URL('category/8')}}" class="more">more</a>
+    <ul class="clearfix">
+        <li><a href="{{url('category/7')}}"><img src="images/ic1.png"></a></li>
+        <li><img src="images/ic2.png"></li>
+        <li><img src="images/ic3.png"></li>
+        <li><img src="images/ic4.png"></li>
+    </ul>
 </div>
 <?php 
     //获取推荐文章
-    $index_4 = \App\Models\ArticleCategory::find(7);
+    $index_4 = \App\Models\ArticleCategory::find(3);
     $index_4['article'] = \App\Models\Article::ArticleList([
-        'cate_id_in' => sub_cate_in(7),
-        'take'=>9,
-        'is_top'=>1,
-    ]);
-?>
-<div class="index_4">
-    <div class="layout">
-        <div class="title">{{$index_4['title']}}<p>{{$index_4['en_title']}}</p></div>
-        <ul class="clearfix">
-            @foreach($index_4['article'] as $v)
-            <li>
-                <a href="{{asset($v['old_img'])}}" alt="{{$v['alt']}}" data-size="{{getimagesize($v['old_img'])[0]}}x{{getimagesize($v['old_img'])[1]}}">
-                    <div class="box">
-                        <img src="{{asset($v['img'])}}" alt="{{$v['alt']}}">
-                    </div>
-                    <p>{{$v['title']}}</p>
-                </a>
-            </li>
-            @endforeach
-        </ul>
-    </div>
-</div>
-<?php 
-    //获取推荐文章
-    $index_5 = \App\Models\ArticleCategory::find(3);
-    $index_5['article'] = \App\Models\Article::ArticleList([
         'cate_id_in' => sub_cate_in(3),
         'take'=>9,
         'is_top'=>1,
     ]);
 ?>
-<div class="index_5">
-    <div class="layout">
-        <div class="title">{{$index_5['title']}}<p>{{$index_5['en_title']}}</p></div>
-        <ul class="clearfix">
-            @foreach($index_5['article'] as $v)
-            <li><a href="{{url('article',[$v['id']])}}">
-                <div class="pic"><img src="{{asset($v['img'])}}" alt="{{$v['alt']}}"></div>
-                <div class="w clearfix">
-                    <div class="time"><b>{{date("m/d",strtotime($v['add_time']))}}</b>{{date("Y",strtotime($v['add_time']))}}</div>
-                    <div class="fr">
-                        <h3>{{$v['title']}}</h3>
-                        <p class="dot">{!!nl2br($v['desc'])!!}</p>
-                    </div>
-                </div>
-            </a></li>
-            @endforeach
-        </ul>
-        <a href="{{URL('category',[$index_5['id']])}}" class="more more2">more</a>
-    </div>
-</div>
-<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="pswp__bg"></div>
-    <div class="pswp__scroll-wrap">
-        <div class="pswp__container">
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-        </div>
-        <div class="pswp__ui pswp__ui--hidden">
-        
-            <div class="pswp__top-bar">
-                <div class="pswp__counter"></div>
-                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-                <button class="pswp__button pswp__button--share" title="Share"></button>
-                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-                <div class="pswp__preloader">
-                    <div class="pswp__preloader__icn">
-                        <div class="pswp__preloader__cut">
-                            <div class="pswp__preloader__donut"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                <div class="pswp__share-tooltip"></div> 
-            </div>
-            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
-            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
-            <div class="pswp__caption">
-                <div class="pswp__caption__center"></div>
-            </div>
-        </div>
-    </div>
+<div class="index_4">
+    <div class="title">{{$index_4['title']}}<p>{{$index_4['en_title']}}</p></div>
+    <ul class="news_list">
+        @foreach($index_5['article'] as $v)
+        <li><a href="{{url('article',[$v['id']])}}">
+            <h3>{{$v['title']}}</h3>
+            <h4>{{date("Y-m-d",strtotime($v['add_time']))}}</h4>
+            <p class="dot">{!!nl2br($v['desc'])!!}</p>
+        </a></li>
+        @endforeach
+    </ul>
+    <a href="{{URL('category',[$index_4['id']])}}" class="more">more</a>
 </div>
 @endsection
 @section('script')

@@ -11,7 +11,7 @@
  Target Server Version : 50553
  File Encoding         : 65001
 
- Date: 29/09/2018 02:49:06
+ Date: 29/09/2018 16:53:45
 */
 
 SET NAMES utf8mb4;
@@ -94,13 +94,9 @@ INSERT INTO `hl_admin_menu` VALUES (13, 9, 9, '文章', 'fa-book', 'article-ifra
 INSERT INTO `hl_admin_menu` VALUES (14, 0, 11, '图片', 'fa-image', NULL, '2018-04-23 13:55:09', '2018-04-23 14:28:27');
 INSERT INTO `hl_admin_menu` VALUES (15, 14, 12, '广告图', 'fa-image', '/ads-position', '2018-04-23 13:55:53', '2018-04-23 14:28:27');
 INSERT INTO `hl_admin_menu` VALUES (16, 11, 15, '头部导航', 'fa-wrench', 'nav?type=1', '2018-04-24 15:54:35', '2018-06-06 11:47:03');
-INSERT INTO `hl_admin_menu` VALUES (34, 32, 21, '下载记录', 'fa-arrow-down', 'download', '2018-08-09 01:03:23', '2018-08-09 01:04:12');
-INSERT INTO `hl_admin_menu` VALUES (19, 30, 18, '活动报名', 'fa-joomla', 'apply', '2018-04-26 01:42:05', '2018-08-09 01:04:12');
-INSERT INTO `hl_admin_menu` VALUES (30, 0, 16, '活动管理', 'fa-bars', 'activity', '2018-08-05 17:49:01', '2018-08-09 01:04:12');
-INSERT INTO `hl_admin_menu` VALUES (31, 30, 17, '活动列表', 'fa-bars', 'activity', '2018-08-05 17:49:22', '2018-08-09 01:04:12');
-INSERT INTO `hl_admin_menu` VALUES (32, 0, 19, '会员管理', 'fa-user', NULL, '2018-08-07 11:21:39', '2018-08-09 01:04:12');
-INSERT INTO `hl_admin_menu` VALUES (33, 32, 20, '会员列表', 'fa-user', 'users', '2018-08-07 11:22:35', '2018-08-09 01:04:12');
-INSERT INTO `hl_admin_menu` VALUES (35, 32, 22, '收藏记录', 'fa-bookmark', 'collection', '2018-08-09 01:03:59', '2018-08-09 01:04:12');
+INSERT INTO `hl_admin_menu` VALUES (17, 11, 16, '尾部导航', 'fa-wrench', 'nav?type=2', '2018-04-24 15:54:46', '2018-06-10 00:18:08');
+INSERT INTO `hl_admin_menu` VALUES (18, 11, 17, '友情链接', 'fa-wrench', 'link', '2018-04-25 14:28:46', '2018-06-10 00:18:08');
+INSERT INTO `hl_admin_menu` VALUES (20, 0, 21, '联系', 'fa-joomla', 'apply', '2018-04-26 01:42:27', '2018-06-26 01:04:00');
 
 -- ----------------------------
 -- Table structure for hl_admin_operation_log
@@ -117,7 +113,7 @@ CREATE TABLE `hl_admin_operation_log`  (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `admin_operation_log_user_id_index`(`user_id`) USING BTREE
-) ENGINE = MyISAM AUTO_INCREMENT = 13514 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = MyISAM AUTO_INCREMENT = 13636 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of hl_admin_operation_log
@@ -7170,6 +7166,128 @@ INSERT INTO `hl_admin_operation_log` VALUES (13510, 1, 'admin/article-category',
 INSERT INTO `hl_admin_operation_log` VALUES (13511, 1, 'admin/article-category/9/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-09-29 02:35:26', '2018-09-29 02:35:26');
 INSERT INTO `hl_admin_operation_log` VALUES (13512, 1, 'admin/article-category/9', 'PUT', '127.0.0.1', '{\"title\":\"\\u8054\\u7cfb\\u4e2d\\u80fd\",\"en_title\":\"CONTACT US\",\"template\":\"contact_us\",\"parent_id\":\"0\",\"cat_desc\":null,\"content\":\"\\u7f51\\u7ad9\\u7ef4\\u62a4\\u4eba\\u5458\\u8054\\u7cfb\\u65b9\\u5f0f\\uff1aQQ\\uff1a2995353088 \\u5fae\\u4fe1\\u53f7\\uff1azhongnengdianli \\u7535\\u8bdd\\uff1a13487222870\",\"seo_title\":null,\"seo_keywords\":null,\"seo_description\":null,\"alt\":null,\"alt2\":null,\"_token\":\"u4oN8oFnBr0WghxJyFo6xdgZ0ywAJyfT3BMixuef\",\"_method\":\"PUT\",\"_previous_\":\"http:\\/\\/zhongneng.me\\/admin\\/article-category\"}', '2018-09-29 02:35:30', '2018-09-29 02:35:30');
 INSERT INTO `hl_admin_operation_log` VALUES (13513, 1, 'admin/article-category', 'GET', '127.0.0.1', '[]', '2018-09-29 02:35:31', '2018-09-29 02:35:31');
+INSERT INTO `hl_admin_operation_log` VALUES (13514, 1, 'admin', 'GET', '127.0.0.1', '[]', '2018-09-29 11:48:18', '2018-09-29 11:48:18');
+INSERT INTO `hl_admin_operation_log` VALUES (13515, 1, 'admin/article-category', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-09-29 11:48:20', '2018-09-29 11:48:20');
+INSERT INTO `hl_admin_operation_log` VALUES (13516, 1, 'admin/article-iframe', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-09-29 11:48:21', '2018-09-29 11:48:21');
+INSERT INTO `hl_admin_operation_log` VALUES (13517, 1, 'admin/article', 'GET', '127.0.0.1', '{\"no_header\":\"true\",\"no_sidebar\":\"true\",\"no_footer\":\"true\",\"collapse\":\"true\"}', '2018-09-29 11:48:21', '2018-09-29 11:48:21');
+INSERT INTO `hl_admin_operation_log` VALUES (13518, 1, 'admin/ads-position', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-09-29 11:48:23', '2018-09-29 11:48:23');
+INSERT INTO `hl_admin_operation_log` VALUES (13519, 1, 'admin/ads-position/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-09-29 11:48:24', '2018-09-29 11:48:24');
+INSERT INTO `hl_admin_operation_log` VALUES (13520, 1, 'admin/ads-position', 'POST', '127.0.0.1', '{\"title\":\"\\u9996\\u9875banner\",\"message\":null,\"width\":\"1920\",\"height\":\"650\",\"_token\":\"1m1IAPyBz2Nx9jEBAQajVOIP1vevcveKzmURbLWJ\",\"_previous_\":\"http:\\/\\/zhongneng.me\\/admin\\/ads-position\"}', '2018-09-29 11:48:49', '2018-09-29 11:48:49');
+INSERT INTO `hl_admin_operation_log` VALUES (13521, 1, 'admin/ads-position', 'GET', '127.0.0.1', '[]', '2018-09-29 11:48:49', '2018-09-29 11:48:49');
+INSERT INTO `hl_admin_operation_log` VALUES (13522, 1, 'admin/ads-position/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-09-29 11:48:51', '2018-09-29 11:48:51');
+INSERT INTO `hl_admin_operation_log` VALUES (13523, 1, 'admin/ads-position', 'POST', '127.0.0.1', '{\"title\":\"\\u624b\\u673a-\\u9996\\u9875banner\",\"message\":null,\"width\":\"840\",\"height\":\"800\",\"_token\":\"1m1IAPyBz2Nx9jEBAQajVOIP1vevcveKzmURbLWJ\",\"_previous_\":\"http:\\/\\/zhongneng.me\\/admin\\/ads-position\"}', '2018-09-29 11:49:10', '2018-09-29 11:49:10');
+INSERT INTO `hl_admin_operation_log` VALUES (13524, 1, 'admin/ads-position', 'GET', '127.0.0.1', '[]', '2018-09-29 11:49:10', '2018-09-29 11:49:10');
+INSERT INTO `hl_admin_operation_log` VALUES (13525, 1, 'admin/ads-image', 'GET', '127.0.0.1', '{\"cate_id\":\"35\",\"_pjax\":\"#pjax-container\"}', '2018-09-29 11:49:11', '2018-09-29 11:49:11');
+INSERT INTO `hl_admin_operation_log` VALUES (13526, 1, 'admin/ads-image/create', 'GET', '127.0.0.1', '{\"cate_id\":\"35\",\"_pjax\":\"#pjax-container\"}', '2018-09-29 11:49:12', '2018-09-29 11:49:12');
+INSERT INTO `hl_admin_operation_log` VALUES (13527, 1, 'admin/ads-image', 'POST', '127.0.0.1', '{\"title\":null,\"desc\":null,\"cate_id\":\"35\",\"alt\":null,\"order\":\"0\",\"url\":null,\"btn_title\":null,\"_token\":\"1m1IAPyBz2Nx9jEBAQajVOIP1vevcveKzmURbLWJ\",\"_previous_\":\"http:\\/\\/zhongneng.me\\/admin\\/ads-image?cate_id=35\"}', '2018-09-29 11:49:35', '2018-09-29 11:49:35');
+INSERT INTO `hl_admin_operation_log` VALUES (13528, 1, 'admin/ads-image', 'GET', '127.0.0.1', '{\"cate_id\":\"35\"}', '2018-09-29 11:49:35', '2018-09-29 11:49:35');
+INSERT INTO `hl_admin_operation_log` VALUES (13529, 1, 'admin/ads-position', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-09-29 11:49:38', '2018-09-29 11:49:38');
+INSERT INTO `hl_admin_operation_log` VALUES (13530, 1, 'admin/ads-image', 'GET', '127.0.0.1', '{\"cate_id\":\"36\",\"_pjax\":\"#pjax-container\"}', '2018-09-29 11:49:39', '2018-09-29 11:49:39');
+INSERT INTO `hl_admin_operation_log` VALUES (13531, 1, 'admin/ads-image/create', 'GET', '127.0.0.1', '{\"cate_id\":\"36\",\"_pjax\":\"#pjax-container\"}', '2018-09-29 11:49:40', '2018-09-29 11:49:40');
+INSERT INTO `hl_admin_operation_log` VALUES (13532, 1, 'admin/ads-image', 'POST', '127.0.0.1', '{\"title\":null,\"desc\":null,\"cate_id\":\"36\",\"alt\":null,\"order\":\"0\",\"url\":null,\"btn_title\":null,\"_token\":\"1m1IAPyBz2Nx9jEBAQajVOIP1vevcveKzmURbLWJ\",\"_previous_\":\"http:\\/\\/zhongneng.me\\/admin\\/ads-image?cate_id=36\"}', '2018-09-29 11:49:53', '2018-09-29 11:49:53');
+INSERT INTO `hl_admin_operation_log` VALUES (13533, 1, 'admin/ads-image', 'GET', '127.0.0.1', '{\"cate_id\":\"36\"}', '2018-09-29 11:49:53', '2018-09-29 11:49:53');
+INSERT INTO `hl_admin_operation_log` VALUES (13534, 1, 'admin/ads-position', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-09-29 11:50:20', '2018-09-29 11:50:20');
+INSERT INTO `hl_admin_operation_log` VALUES (13535, 1, 'admin/article-category', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-09-29 11:52:21', '2018-09-29 11:52:21');
+INSERT INTO `hl_admin_operation_log` VALUES (13536, 1, 'admin/article-category/6/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-09-29 12:03:50', '2018-09-29 12:03:50');
+INSERT INTO `hl_admin_operation_log` VALUES (13537, 1, 'admin/article-category/6', 'PUT', '127.0.0.1', '{\"title\":\"\\u5173\\u4e8e\\u4e2d\\u80fd\",\"en_title\":\"ABOUT US\",\"template\":null,\"parent_id\":\"0\",\"cat_desc\":\"\\u5e7f\\u5dde\\u4e2d\\u80fd\\u7535\\u529b\\u5efa\\u8bbe\\u5de5\\u7a0b\\u6709\\u9650\\u516c\\u53f8\\u662f\\u5e7f\\u5dde\\u5e02\\u5de5\\u5546\\u5c40\\u6ce8\\u518c\\u7684\\u6cd5\\u4eba\\u5355\\u4f4d\\uff0c\\u6ce8\\u518c\\u8d44\\u91d15000\\u4e07\\u3002\\u201c\\u6280\\u672f\\u7cbe\\u6e5b\\u3001\\u670d\\u52a1\\u4f18\\u8d28\\u3001\\u7ba1\\u7406\\u9ad8\\u6548\\u201d\\u662f\\u516c\\u53f8\\u7684\\u7ecf\\u8425\\u7406\\u5ff5\\u3002\\r\\n\\u79c9\\u627f\\u201c\\u670d\\u52a1\\u597d\\u3001\\u7ba1\\u7406\\u597d\\u3001\\u5f62\\u8c61\\u597d\\u201d\\u7684\\u5b97\\u65e8\\uff0c\\u4e25\\u683c\\u9075\\u5b88\\u4f18\\u8d28\\u3001\\u9ad8\\u6548\\u3001\\u5b89\\u5168\\u7684\\u539f\\u5219\\uff0c\\u516c\\u53f8\\u5148...\",\"content\":null,\"seo_title\":null,\"seo_keywords\":null,\"seo_description\":null,\"alt\":null,\"alt2\":null,\"_token\":\"1m1IAPyBz2Nx9jEBAQajVOIP1vevcveKzmURbLWJ\",\"_method\":\"PUT\",\"_previous_\":\"http:\\/\\/zhongneng.me\\/admin\\/article-category\"}', '2018-09-29 12:04:10', '2018-09-29 12:04:10');
+INSERT INTO `hl_admin_operation_log` VALUES (13538, 1, 'admin/article-category', 'GET', '127.0.0.1', '[]', '2018-09-29 12:04:10', '2018-09-29 12:04:10');
+INSERT INTO `hl_admin_operation_log` VALUES (13539, 1, 'admin/article-category', 'GET', '127.0.0.1', '[]', '2018-09-29 12:06:12', '2018-09-29 12:06:12');
+INSERT INTO `hl_admin_operation_log` VALUES (13540, 1, 'admin/article-category/6/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-09-29 13:46:14', '2018-09-29 13:46:14');
+INSERT INTO `hl_admin_operation_log` VALUES (13541, 1, 'admin/ads-position', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-09-29 13:46:49', '2018-09-29 13:46:49');
+INSERT INTO `hl_admin_operation_log` VALUES (13542, 1, 'admin/ads-position/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-09-29 13:46:51', '2018-09-29 13:46:51');
+INSERT INTO `hl_admin_operation_log` VALUES (13543, 1, 'admin/ads-position', 'POST', '127.0.0.1', '{\"title\":\"\\u9996\\u9875-\\u4e2d\\u80fd\\u7b80\\u4ecb\",\"message\":null,\"width\":\"30\",\"height\":\"30\",\"_token\":\"1m1IAPyBz2Nx9jEBAQajVOIP1vevcveKzmURbLWJ\",\"_previous_\":\"http:\\/\\/zhongneng.me\\/admin\\/ads-position\"}', '2018-09-29 13:48:52', '2018-09-29 13:48:52');
+INSERT INTO `hl_admin_operation_log` VALUES (13544, 1, 'admin/ads-position', 'GET', '127.0.0.1', '[]', '2018-09-29 13:48:52', '2018-09-29 13:48:52');
+INSERT INTO `hl_admin_operation_log` VALUES (13545, 1, 'admin/article-category', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-09-29 13:48:55', '2018-09-29 13:48:55');
+INSERT INTO `hl_admin_operation_log` VALUES (13546, 1, 'admin/ads-position', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-09-29 13:49:36', '2018-09-29 13:49:36');
+INSERT INTO `hl_admin_operation_log` VALUES (13547, 1, 'admin/ads-image', 'GET', '127.0.0.1', '{\"cate_id\":\"37\",\"_pjax\":\"#pjax-container\"}', '2018-09-29 13:49:43', '2018-09-29 13:49:43');
+INSERT INTO `hl_admin_operation_log` VALUES (13548, 1, 'admin/ads-image/create', 'GET', '127.0.0.1', '{\"cate_id\":\"37\",\"_pjax\":\"#pjax-container\"}', '2018-09-29 13:49:44', '2018-09-29 13:49:44');
+INSERT INTO `hl_admin_operation_log` VALUES (13549, 1, 'admin/ads-position', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-09-29 13:50:36', '2018-09-29 13:50:36');
+INSERT INTO `hl_admin_operation_log` VALUES (13550, 1, 'admin/ads-position/37/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-09-29 13:50:47', '2018-09-29 13:50:47');
+INSERT INTO `hl_admin_operation_log` VALUES (13551, 1, 'admin/ads-position/37', 'PUT', '127.0.0.1', '{\"title\":\"\\u9996\\u9875-\\u4e2d\\u80fd\\u7b80\\u4ecb\",\"message\":null,\"width\":\"460\",\"height\":\"480\",\"_token\":\"1m1IAPyBz2Nx9jEBAQajVOIP1vevcveKzmURbLWJ\",\"_method\":\"PUT\",\"_previous_\":\"http:\\/\\/zhongneng.me\\/admin\\/ads-position\"}', '2018-09-29 13:50:51', '2018-09-29 13:50:51');
+INSERT INTO `hl_admin_operation_log` VALUES (13552, 1, 'admin/ads-position', 'GET', '127.0.0.1', '[]', '2018-09-29 13:50:52', '2018-09-29 13:50:52');
+INSERT INTO `hl_admin_operation_log` VALUES (13553, 1, 'admin/ads-image', 'GET', '127.0.0.1', '{\"cate_id\":\"37\",\"_pjax\":\"#pjax-container\"}', '2018-09-29 13:50:53', '2018-09-29 13:50:53');
+INSERT INTO `hl_admin_operation_log` VALUES (13554, 1, 'admin/ads-image/create', 'GET', '127.0.0.1', '{\"cate_id\":\"37\",\"_pjax\":\"#pjax-container\"}', '2018-09-29 13:50:54', '2018-09-29 13:50:54');
+INSERT INTO `hl_admin_operation_log` VALUES (13555, 1, 'admin/ads-image', 'POST', '127.0.0.1', '{\"title\":null,\"desc\":null,\"cate_id\":\"37\",\"alt\":null,\"order\":\"0\",\"url\":null,\"btn_title\":null,\"_token\":\"1m1IAPyBz2Nx9jEBAQajVOIP1vevcveKzmURbLWJ\",\"_previous_\":\"http:\\/\\/zhongneng.me\\/admin\\/ads-image?cate_id=37\"}', '2018-09-29 13:51:13', '2018-09-29 13:51:13');
+INSERT INTO `hl_admin_operation_log` VALUES (13556, 1, 'admin/ads-image', 'GET', '127.0.0.1', '{\"cate_id\":\"37\"}', '2018-09-29 13:51:13', '2018-09-29 13:51:13');
+INSERT INTO `hl_admin_operation_log` VALUES (13557, 1, 'admin/ads-position', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-09-29 13:51:20', '2018-09-29 13:51:20');
+INSERT INTO `hl_admin_operation_log` VALUES (13558, 1, 'admin/ads-position/37/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-09-29 13:51:21', '2018-09-29 13:51:21');
+INSERT INTO `hl_admin_operation_log` VALUES (13559, 1, 'admin/ads-position/37', 'PUT', '127.0.0.1', '{\"title\":\"\\u9996\\u9875-\\u4e2d\\u80fd\\u7b80\\u4ecb-\\u54c1\\u724c\\u6545\\u4e8b\",\"message\":null,\"width\":\"460\",\"height\":\"480\",\"_token\":\"1m1IAPyBz2Nx9jEBAQajVOIP1vevcveKzmURbLWJ\",\"_method\":\"PUT\",\"_previous_\":\"http:\\/\\/zhongneng.me\\/admin\\/ads-position\"}', '2018-09-29 13:51:30', '2018-09-29 13:51:30');
+INSERT INTO `hl_admin_operation_log` VALUES (13560, 1, 'admin/ads-position', 'GET', '127.0.0.1', '[]', '2018-09-29 13:51:30', '2018-09-29 13:51:30');
+INSERT INTO `hl_admin_operation_log` VALUES (13561, 1, 'admin/article-category', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-09-29 13:51:39', '2018-09-29 13:51:39');
+INSERT INTO `hl_admin_operation_log` VALUES (13562, 1, 'admin/article-category', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-09-29 14:07:33', '2018-09-29 14:07:33');
+INSERT INTO `hl_admin_operation_log` VALUES (13563, 1, 'admin/article-iframe', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-09-29 14:07:34', '2018-09-29 14:07:34');
+INSERT INTO `hl_admin_operation_log` VALUES (13564, 1, 'admin/article', 'GET', '127.0.0.1', '{\"no_header\":\"true\",\"no_sidebar\":\"true\",\"no_footer\":\"true\",\"collapse\":\"true\"}', '2018-09-29 14:07:34', '2018-09-29 14:07:34');
+INSERT INTO `hl_admin_operation_log` VALUES (13565, 1, 'admin/article/4', 'PUT', '127.0.0.1', '{\"is_top\":\"on\",\"_token\":\"1m1IAPyBz2Nx9jEBAQajVOIP1vevcveKzmURbLWJ\",\"_method\":\"PUT\"}', '2018-09-29 14:07:37', '2018-09-29 14:07:37');
+INSERT INTO `hl_admin_operation_log` VALUES (13566, 1, 'admin/article', 'GET', '127.0.0.1', '{\"cate_id\":null}', '2018-09-29 14:07:37', '2018-09-29 14:07:37');
+INSERT INTO `hl_admin_operation_log` VALUES (13567, 1, 'admin/article/3', 'PUT', '127.0.0.1', '{\"is_top\":\"on\",\"_token\":\"1m1IAPyBz2Nx9jEBAQajVOIP1vevcveKzmURbLWJ\",\"_method\":\"PUT\"}', '2018-09-29 14:07:38', '2018-09-29 14:07:38');
+INSERT INTO `hl_admin_operation_log` VALUES (13568, 1, 'admin/article/2', 'PUT', '127.0.0.1', '{\"is_top\":\"on\",\"_token\":\"1m1IAPyBz2Nx9jEBAQajVOIP1vevcveKzmURbLWJ\",\"_method\":\"PUT\"}', '2018-09-29 14:07:38', '2018-09-29 14:07:38');
+INSERT INTO `hl_admin_operation_log` VALUES (13569, 1, 'admin/article', 'GET', '127.0.0.1', '{\"cate_id\":null}', '2018-09-29 14:07:38', '2018-09-29 14:07:38');
+INSERT INTO `hl_admin_operation_log` VALUES (13570, 1, 'admin/article', 'GET', '127.0.0.1', '{\"cate_id\":null}', '2018-09-29 14:07:39', '2018-09-29 14:07:39');
+INSERT INTO `hl_admin_operation_log` VALUES (13571, 1, 'admin/article/1', 'PUT', '127.0.0.1', '{\"is_top\":\"on\",\"_token\":\"1m1IAPyBz2Nx9jEBAQajVOIP1vevcveKzmURbLWJ\",\"_method\":\"PUT\"}', '2018-09-29 14:07:39', '2018-09-29 14:07:39');
+INSERT INTO `hl_admin_operation_log` VALUES (13572, 1, 'admin/article', 'GET', '127.0.0.1', '{\"cate_id\":null}', '2018-09-29 14:07:40', '2018-09-29 14:07:40');
+INSERT INTO `hl_admin_operation_log` VALUES (13573, 1, 'admin/article-category', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-09-29 14:08:09', '2018-09-29 14:08:09');
+INSERT INTO `hl_admin_operation_log` VALUES (13574, 1, 'admin/ads-position', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-09-29 14:08:11', '2018-09-29 14:08:11');
+INSERT INTO `hl_admin_operation_log` VALUES (13575, 1, 'admin/ads-image', 'GET', '127.0.0.1', '{\"cate_id\":\"35\",\"_pjax\":\"#pjax-container\"}', '2018-09-29 14:08:13', '2018-09-29 14:08:13');
+INSERT INTO `hl_admin_operation_log` VALUES (13576, 1, 'admin/ads-image/55/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-09-29 14:08:15', '2018-09-29 14:08:15');
+INSERT INTO `hl_admin_operation_log` VALUES (13577, 1, 'admin/article-category', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-09-29 14:09:17', '2018-09-29 14:09:17');
+INSERT INTO `hl_admin_operation_log` VALUES (13578, 1, 'admin/article-iframe', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-09-29 14:09:18', '2018-09-29 14:09:18');
+INSERT INTO `hl_admin_operation_log` VALUES (13579, 1, 'admin/article', 'GET', '127.0.0.1', '{\"no_header\":\"true\",\"no_sidebar\":\"true\",\"no_footer\":\"true\",\"collapse\":\"true\"}', '2018-09-29 14:09:18', '2018-09-29 14:09:18');
+INSERT INTO `hl_admin_operation_log` VALUES (13580, 1, 'admin/article', 'GET', '127.0.0.1', '{\"no_header\":\"true\",\"no_sidebar\":\"true\",\"no_footer\":\"true\",\"collapse\":\"true\",\"cate_id\":\"5\"}', '2018-09-29 14:09:21', '2018-09-29 14:09:21');
+INSERT INTO `hl_admin_operation_log` VALUES (13581, 1, 'admin/config', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-09-29 14:11:11', '2018-09-29 14:11:11');
+INSERT INTO `hl_admin_operation_log` VALUES (13582, 1, 'admin/nav', 'GET', '127.0.0.1', '{\"type\":\"1\",\"_pjax\":\"#pjax-container\"}', '2018-09-29 14:11:12', '2018-09-29 14:11:12');
+INSERT INTO `hl_admin_operation_log` VALUES (13583, 1, 'admin/activity', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-09-29 14:11:14', '2018-09-29 14:11:14');
+INSERT INTO `hl_admin_operation_log` VALUES (13584, 1, 'admin/apply', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-09-29 14:11:14', '2018-09-29 14:11:14');
+INSERT INTO `hl_admin_operation_log` VALUES (13585, 1, 'admin', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-09-29 14:11:17', '2018-09-29 14:11:17');
+INSERT INTO `hl_admin_operation_log` VALUES (13586, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-09-29 14:11:18', '2018-09-29 14:11:18');
+INSERT INTO `hl_admin_operation_log` VALUES (13587, 1, 'admin/auth/menu/30', 'DELETE', '127.0.0.1', '{\"_method\":\"delete\",\"_token\":\"1m1IAPyBz2Nx9jEBAQajVOIP1vevcveKzmURbLWJ\"}', '2018-09-29 14:11:22', '2018-09-29 14:11:22');
+INSERT INTO `hl_admin_operation_log` VALUES (13588, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-09-29 14:11:22', '2018-09-29 14:11:22');
+INSERT INTO `hl_admin_operation_log` VALUES (13589, 1, 'admin/auth/menu/32', 'DELETE', '127.0.0.1', '{\"_method\":\"delete\",\"_token\":\"1m1IAPyBz2Nx9jEBAQajVOIP1vevcveKzmURbLWJ\"}', '2018-09-29 14:11:26', '2018-09-29 14:11:26');
+INSERT INTO `hl_admin_operation_log` VALUES (13590, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-09-29 14:11:26', '2018-09-29 14:11:26');
+INSERT INTO `hl_admin_operation_log` VALUES (13591, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2018-09-29 14:12:20', '2018-09-29 14:12:20');
+INSERT INTO `hl_admin_operation_log` VALUES (13592, 1, 'admin/apply', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-09-29 14:12:21', '2018-09-29 14:12:21');
+INSERT INTO `hl_admin_operation_log` VALUES (13593, 1, 'admin/link', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-09-29 14:12:26', '2018-09-29 14:12:26');
+INSERT INTO `hl_admin_operation_log` VALUES (13594, 1, 'admin/link/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-09-29 14:12:28', '2018-09-29 14:12:28');
+INSERT INTO `hl_admin_operation_log` VALUES (13595, 1, 'admin/link', 'POST', '127.0.0.1', '{\"title\":\"\\u767e\\u5ea6\",\"url\":\"https:\\/\\/www.baidu.com\\/\",\"order\":\"0\",\"_token\":\"1m1IAPyBz2Nx9jEBAQajVOIP1vevcveKzmURbLWJ\",\"_previous_\":\"http:\\/\\/zhongneng.me\\/admin\\/link\"}', '2018-09-29 14:12:40', '2018-09-29 14:12:40');
+INSERT INTO `hl_admin_operation_log` VALUES (13596, 1, 'admin/link', 'GET', '127.0.0.1', '[]', '2018-09-29 14:12:41', '2018-09-29 14:12:41');
+INSERT INTO `hl_admin_operation_log` VALUES (13597, 1, 'admin/link', 'GET', '127.0.0.1', '[]', '2018-09-29 14:13:01', '2018-09-29 14:13:01');
+INSERT INTO `hl_admin_operation_log` VALUES (13598, 1, 'admin/nav', 'GET', '127.0.0.1', '{\"type\":\"2\",\"_pjax\":\"#pjax-container\"}', '2018-09-29 14:13:03', '2018-09-29 14:13:03');
+INSERT INTO `hl_admin_operation_log` VALUES (13599, 1, 'admin/article-category', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-09-29 14:13:30', '2018-09-29 14:13:30');
+INSERT INTO `hl_admin_operation_log` VALUES (13600, 1, 'admin/article-category', 'POST', '127.0.0.1', '{\"_token\":\"1m1IAPyBz2Nx9jEBAQajVOIP1vevcveKzmURbLWJ\",\"_order\":\"[{\\\"id\\\":1,\\\"children\\\":[{\\\"id\\\":2}]},{\\\"id\\\":3,\\\"children\\\":[{\\\"id\\\":4}]},{\\\"id\\\":5},{\\\"id\\\":6,\\\"children\\\":[{\\\"id\\\":8},{\\\"id\\\":7}]},{\\\"id\\\":9}]\"}', '2018-09-29 14:14:00', '2018-09-29 14:14:00');
+INSERT INTO `hl_admin_operation_log` VALUES (13601, 1, 'admin/article-category', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-09-29 14:14:01', '2018-09-29 14:14:01');
+INSERT INTO `hl_admin_operation_log` VALUES (13602, 1, 'admin/ads-position', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-09-29 14:26:22', '2018-09-29 14:26:22');
+INSERT INTO `hl_admin_operation_log` VALUES (13603, 1, 'admin', 'GET', '127.0.0.1', '[]', '2018-09-29 16:32:17', '2018-09-29 16:32:17');
+INSERT INTO `hl_admin_operation_log` VALUES (13604, 1, 'admin/apply', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-09-29 16:32:20', '2018-09-29 16:32:20');
+INSERT INTO `hl_admin_operation_log` VALUES (13605, 1, 'admin/apply', 'GET', '127.0.0.1', '[]', '2018-09-29 16:33:00', '2018-09-29 16:33:00');
+INSERT INTO `hl_admin_operation_log` VALUES (13606, 1, 'admin/apply/26', 'PUT', '127.0.0.1', '{\"is_read\":\"on\",\"_token\":\"1m1IAPyBz2Nx9jEBAQajVOIP1vevcveKzmURbLWJ\",\"_method\":\"PUT\"}', '2018-09-29 16:33:03', '2018-09-29 16:33:03');
+INSERT INTO `hl_admin_operation_log` VALUES (13607, 1, 'admin/apply', 'GET', '127.0.0.1', '[]', '2018-09-29 16:33:25', '2018-09-29 16:33:25');
+INSERT INTO `hl_admin_operation_log` VALUES (13608, 1, 'admin/config', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-09-29 16:33:33', '2018-09-29 16:33:33');
+INSERT INTO `hl_admin_operation_log` VALUES (13609, 1, 'admin/nav', 'GET', '127.0.0.1', '{\"type\":\"1\",\"_pjax\":\"#pjax-container\"}', '2018-09-29 16:33:34', '2018-09-29 16:33:34');
+INSERT INTO `hl_admin_operation_log` VALUES (13610, 1, 'admin/nav', 'GET', '127.0.0.1', '{\"type\":\"2\",\"_pjax\":\"#pjax-container\"}', '2018-09-29 16:33:35', '2018-09-29 16:33:35');
+INSERT INTO `hl_admin_operation_log` VALUES (13611, 1, 'admin/link', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-09-29 16:33:35', '2018-09-29 16:33:35');
+INSERT INTO `hl_admin_operation_log` VALUES (13612, 1, 'admin/ads-position', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-09-29 16:33:37', '2018-09-29 16:33:37');
+INSERT INTO `hl_admin_operation_log` VALUES (13613, 1, 'admin/article-iframe', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-09-29 16:33:39', '2018-09-29 16:33:39');
+INSERT INTO `hl_admin_operation_log` VALUES (13614, 1, 'admin/article', 'GET', '127.0.0.1', '{\"no_header\":\"true\",\"no_sidebar\":\"true\",\"no_footer\":\"true\",\"collapse\":\"true\"}', '2018-09-29 16:33:39', '2018-09-29 16:33:39');
+INSERT INTO `hl_admin_operation_log` VALUES (13615, 1, 'admin/article-category', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-09-29 16:33:40', '2018-09-29 16:33:40');
+INSERT INTO `hl_admin_operation_log` VALUES (13616, 1, 'admin/auth/roles', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-09-29 16:50:36', '2018-09-29 16:50:36');
+INSERT INTO `hl_admin_operation_log` VALUES (13617, 1, 'admin/auth/roles/2/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-09-29 16:50:40', '2018-09-29 16:50:40');
+INSERT INTO `hl_admin_operation_log` VALUES (13618, 1, 'admin/auth/roles/2', 'PUT', '127.0.0.1', '{\"slug\":\"zhongneng\",\"name\":\"zhongneng123\",\"permissions\":[\"1\",null],\"_token\":\"1m1IAPyBz2Nx9jEBAQajVOIP1vevcveKzmURbLWJ\",\"_method\":\"PUT\",\"_previous_\":\"http:\\/\\/zhongneng.me\\/admin\\/auth\\/roles\"}', '2018-09-29 16:51:13', '2018-09-29 16:51:13');
+INSERT INTO `hl_admin_operation_log` VALUES (13619, 1, 'admin/auth/roles', 'GET', '127.0.0.1', '[]', '2018-09-29 16:51:13', '2018-09-29 16:51:13');
+INSERT INTO `hl_admin_operation_log` VALUES (13620, 1, 'admin/auth/roles', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-09-29 16:51:47', '2018-09-29 16:51:47');
+INSERT INTO `hl_admin_operation_log` VALUES (13621, 1, 'admin/auth/roles/2/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-09-29 16:51:50', '2018-09-29 16:51:50');
+INSERT INTO `hl_admin_operation_log` VALUES (13622, 1, 'admin/auth/roles/2', 'PUT', '127.0.0.1', '{\"slug\":\"zhongneng\",\"name\":\"zhongneng\",\"permissions\":[\"1\",null],\"_token\":\"1m1IAPyBz2Nx9jEBAQajVOIP1vevcveKzmURbLWJ\",\"_method\":\"PUT\",\"_previous_\":\"http:\\/\\/zhongneng.me\\/admin\\/auth\\/roles\"}', '2018-09-29 16:51:53', '2018-09-29 16:51:53');
+INSERT INTO `hl_admin_operation_log` VALUES (13623, 1, 'admin/auth/roles', 'GET', '127.0.0.1', '[]', '2018-09-29 16:51:53', '2018-09-29 16:51:53');
+INSERT INTO `hl_admin_operation_log` VALUES (13624, 1, 'admin/auth/users', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-09-29 16:51:54', '2018-09-29 16:51:54');
+INSERT INTO `hl_admin_operation_log` VALUES (13625, 1, 'admin/auth/users/2/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-09-29 16:51:56', '2018-09-29 16:51:56');
+INSERT INTO `hl_admin_operation_log` VALUES (13626, 1, 'admin/auth/users/2', 'PUT', '127.0.0.1', '{\"username\":\"zhongneng\",\"name\":\"\\u4e2d\\u80fd\",\"password\":\"zhongneng123\",\"password_confirmation\":\"zhongneng123\",\"roles\":[\"2\",null],\"permissions\":[null],\"_token\":\"1m1IAPyBz2Nx9jEBAQajVOIP1vevcveKzmURbLWJ\",\"_method\":\"PUT\",\"_previous_\":\"http:\\/\\/zhongneng.me\\/admin\\/auth\\/users\"}', '2018-09-29 16:52:06', '2018-09-29 16:52:06');
+INSERT INTO `hl_admin_operation_log` VALUES (13627, 1, 'admin/auth/users', 'GET', '127.0.0.1', '[]', '2018-09-29 16:52:06', '2018-09-29 16:52:06');
+INSERT INTO `hl_admin_operation_log` VALUES (13628, 2, 'admin', 'GET', '127.0.0.1', '[]', '2018-09-29 16:52:13', '2018-09-29 16:52:13');
+INSERT INTO `hl_admin_operation_log` VALUES (13629, 2, 'admin', 'GET', '127.0.0.1', '[]', '2018-09-29 16:52:32', '2018-09-29 16:52:32');
+INSERT INTO `hl_admin_operation_log` VALUES (13630, 1, 'admin/auth/users/2/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-09-29 16:53:08', '2018-09-29 16:53:08');
+INSERT INTO `hl_admin_operation_log` VALUES (13631, 1, 'admin/auth/users/2', 'PUT', '127.0.0.1', '{\"username\":\"zhongneng\",\"name\":\"\\u4e2d\\u80fd\",\"password\":\"$2y$10$ZzQYv06hI7z26gtMrOw6L.jHGLI2OFFcFKKu66z9U.F\\/4s.zcOdLa\",\"password_confirmation\":\"$2y$10$ZzQYv06hI7z26gtMrOw6L.jHGLI2OFFcFKKu66z9U.F\\/4s.zcOdLa\",\"roles\":[\"2\",null],\"permissions\":[null],\"_token\":\"1m1IAPyBz2Nx9jEBAQajVOIP1vevcveKzmURbLWJ\",\"_method\":\"PUT\",\"_previous_\":\"http:\\/\\/zhongneng.me\\/admin\\/auth\\/users\"}', '2018-09-29 16:53:23', '2018-09-29 16:53:23');
+INSERT INTO `hl_admin_operation_log` VALUES (13632, 1, 'admin/auth/users', 'GET', '127.0.0.1', '[]', '2018-09-29 16:53:23', '2018-09-29 16:53:23');
+INSERT INTO `hl_admin_operation_log` VALUES (13633, 2, 'admin', 'GET', '127.0.0.1', '[]', '2018-09-29 16:53:24', '2018-09-29 16:53:24');
+INSERT INTO `hl_admin_operation_log` VALUES (13634, 2, 'admin/article-category', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-09-29 16:53:27', '2018-09-29 16:53:27');
+INSERT INTO `hl_admin_operation_log` VALUES (13635, 2, 'admin/apply', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2018-09-29 16:53:29', '2018-09-29 16:53:29');
 
 -- ----------------------------
 -- Table structure for hl_admin_permissions
@@ -7269,7 +7387,7 @@ CREATE TABLE `hl_admin_roles`  (
 -- Records of hl_admin_roles
 -- ----------------------------
 INSERT INTO `hl_admin_roles` VALUES (1, 'Administrator', 'administrator', '2018-04-16 17:34:36', '2018-04-16 17:34:36');
-INSERT INTO `hl_admin_roles` VALUES (2, 'admin2', 'admin2', '2018-04-26 01:53:23', '2018-06-11 17:14:48');
+INSERT INTO `hl_admin_roles` VALUES (2, 'zhongneng', 'zhongneng', '2018-04-26 01:53:23', '2018-09-29 16:51:53');
 
 -- ----------------------------
 -- Table structure for hl_admin_user_permissions
@@ -7304,7 +7422,7 @@ CREATE TABLE `hl_admin_users`  (
 -- Records of hl_admin_users
 -- ----------------------------
 INSERT INTO `hl_admin_users` VALUES (1, 'admin', '$2y$10$S.OCWM1I9Feqj1Fz3.YgyefihIpWvXP7j/N9BHM8yUeEKR68lJHOO', 'Administrator', NULL, 'vX06NgsvtwZhhmKTzQ5XvTUgFA62G1C58TIMKsTSqniv9KDck6w8ZG9Q0uHg', '2018-04-16 17:34:36', '2018-04-26 01:51:27');
-INSERT INTO `hl_admin_users` VALUES (2, 'huaju', '$2y$10$Cf0bEnzN8b7lcJ/mAcecEOvSHqE7/cpEFgBcTKacUwMHMi.JO78XW', '华矩科技', 'images/111.png', 'Xd3t0ZxCtctME6RoF7EAbxD4VbchXt86go1bBCJCJXoUPlGcZpw4VKLJWhlk', '2018-04-26 01:52:17', '2018-08-07 17:51:22');
+INSERT INTO `hl_admin_users` VALUES (2, 'zhongneng', '$2y$10$ZzQYv06hI7z26gtMrOw6L.jHGLI2OFFcFKKu66z9U.F/4s.zcOdLa', '中能', 'images/user2-160x160.jpg', 'Xd3t0ZxCtctME6RoF7EAbxD4VbchXt86go1bBCJCJXoUPlGcZpw4VKLJWhlk', '2018-04-26 01:52:17', '2018-09-29 16:53:23');
 
 -- ----------------------------
 -- Table structure for hl_ads_image
@@ -7322,7 +7440,14 @@ CREATE TABLE `hl_ads_image`  (
   `btn_title` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '按钮名称',
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `position_id`(`cate_id`) USING BTREE
-) ENGINE = MyISAM AUTO_INCREMENT = 55 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = MyISAM AUTO_INCREMENT = 58 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of hl_ads_image
+-- ----------------------------
+INSERT INTO `hl_ads_image` VALUES (55, 35, 0, 'uploads/images/20180929/5baef64f89d982.69540871.jpg', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `hl_ads_image` VALUES (56, 36, 0, 'uploads/images/20180929/5baef661a6ec41.15055032.jpg', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `hl_ads_image` VALUES (57, 37, 0, 'uploads/images/20180929/5baf12d1318f91.55225396.jpg', NULL, NULL, NULL, NULL, NULL);
 
 -- ----------------------------
 -- Table structure for hl_ads_position
@@ -7335,7 +7460,14 @@ CREATE TABLE `hl_ads_position`  (
   `width` int(10) NULL DEFAULT NULL COMMENT '图片宽度',
   `height` int(10) NULL DEFAULT NULL COMMENT '图片高度',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = MyISAM AUTO_INCREMENT = 35 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = MyISAM AUTO_INCREMENT = 38 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of hl_ads_position
+-- ----------------------------
+INSERT INTO `hl_ads_position` VALUES (35, '首页banner', NULL, 1920, 650);
+INSERT INTO `hl_ads_position` VALUES (36, '手机-首页banner', NULL, 840, 800);
+INSERT INTO `hl_ads_position` VALUES (37, '首页-中能简介-品牌故事', NULL, 460, 480);
 
 -- ----------------------------
 -- Table structure for hl_apply
@@ -7359,7 +7491,7 @@ CREATE TABLE `hl_apply`  (
 -- ----------------------------
 -- Records of hl_apply
 -- ----------------------------
-INSERT INTO `hl_apply` VALUES (26, 'hao', '13226468871', '809448797@qq.com', 'aadd', 'asdasd', '2018-09-29 02:48:14', '2018-09-29 02:48:14', 0, NULL, NULL);
+INSERT INTO `hl_apply` VALUES (26, 'hao', '13226468871', '809448797@qq.com', 'aadd', 'asdasd', '2018-09-29 02:48:14', '2018-09-29 16:33:03', 1, NULL, NULL);
 
 -- ----------------------------
 -- Table structure for hl_article
@@ -7393,10 +7525,10 @@ CREATE TABLE `hl_article`  (
 -- ----------------------------
 -- Records of hl_article
 -- ----------------------------
-INSERT INTO `hl_article` VALUES (1, '华为BC区高低压配电工程', '华为技术有限公司是一家生产销售通信设备的民营通信科技公司，于1987年正式注册成立，总部位于中国深圳市龙岗区坂田华为基地。 [1] \r\n华为是全球领先的信息与通信技术（ICT）解决方案供应商，专注于ICT领域，坚持稳健经营、持续创新、开放合作，在电信运营商、企业、终端和云计算等领域构筑了端到端的解决方案优势，为运营商客户、企业客户和消费者提供有竞争力的ICT解决方案、产品和服务，并致力于使能未来信息社会、构建更美好的全联接世界。2013年，华为首超全球第一大电信设备商爱立信，排名《财富》世界500强第315位。', '项目采用6台变压器供电，（永和）项目采用5台变压器供电...', NULL, NULL, NULL, 'uploads/article/20180928/5bad0406d90a92.44826062.jpg', NULL, '2018-09-28 00:23:34', '2018-09-28 00:23:34', 0, 2, 0, NULL, '2018-09-28 00:21:24', '2013年至今的电气维保；\r\n2013年1月东莞市黄埔海关驻凤岗办事处高低压配电工程；\r\n2015年7月东莞市黄埔海关驻凤岗办事处电房线路改造。', '东莞石龙', 50, NULL);
-INSERT INTO `hl_article` VALUES (2, '电气设备如何维护保养？', '电气设备的危险、有害因素识别应紧密结合工艺的要求和生产环境的状况来进行，一般可考虑从以下几方面进行识别：<br />\r\n1）电气设备的工作环境是否属于爆炸和火灾危险环境，是否属于粉尘、潮湿或腐蚀环境。在这些环境中工作时，对电气设备的相应要求是否满足。<br />\r\n2）电气设备是否具有国家指定机构的安全认证标志，特别是防爆电器的防爆等级。<br />\r\n3）电气设备是否为国家颁布的淘汰产品。<br />', '注意干燥，保持表面无尘土，防晒，过多的太阳辐射对器具表面不好。注意长期不用的时候拔掉开关，以防火灾...', NULL, NULL, NULL, 'uploads/article/20180929/5bae58de6c8d30.37130527.jpg', NULL, '2018-09-29 00:37:50', '2018-09-29 01:07:21', 5, 4, 0, '中能电力', '2018-09-29 00:36:59', NULL, NULL, 50, NULL);
-INSERT INTO `hl_article` VALUES (3, '电力施工', '依据客户需求、GB规范与当地供电部门要求设计配电方案。<br />\r\n将满足客户需求、GB规范与当地供电部门要求的设计图纸送至供电部门审核，协助客户取得《供用电负荷协议》的批复。<br />\r\n依据审批设计图纸，对高低压配电设备、材料进行采购，所有设备与材料均应满足设计与GB质量标准要求。<br />\r\n项目检测<br />\r\n东南电工项目检测 所有电气设备安装结束后按电气设备交接试验标准进行单体试验、分系统调试，对整个工程的各种参数的测试和使之处于安全、高效、可靠的运行状态。<br />\r\n当工程达到竣工验收条件时，完成自评自查工作，填写工程竣工报验单，同时将完整的竣工资料及竣工验收报告，申请竣工验收。检查验收合格，向当地供电部门报竣工验收手续。检查验收不合格，在限定的时间内整改完毕并重新检查验收。<br />', '高低压配电工程是将电能经过生产、传输，最终得以分...', NULL, NULL, NULL, 'uploads/article/20180929/5bae60b39508a7.21387667.jpg', NULL, '2018-09-29 01:11:15', '2018-09-29 01:17:23', 3, 5, 0, '中能电力', '2018-09-29 01:10:24', NULL, NULL, 50, NULL);
-INSERT INTO `hl_article` VALUES (4, '营业执照', NULL, NULL, NULL, NULL, NULL, 'uploads/article/20180929/5bae686170b2c2.66340531.jpg', NULL, '2018-09-29 01:42:27', '2018-09-29 01:44:01', 0, 7, 0, '中能电力', '2018-09-29 01:42:08', NULL, NULL, 50, 'uploads/article/20180929/5bae68616b58e1.10695977.jpg');
+INSERT INTO `hl_article` VALUES (1, '华为BC区高低压配电工程', '华为技术有限公司是一家生产销售通信设备的民营通信科技公司，于1987年正式注册成立，总部位于中国深圳市龙岗区坂田华为基地。 [1] \r\n华为是全球领先的信息与通信技术（ICT）解决方案供应商，专注于ICT领域，坚持稳健经营、持续创新、开放合作，在电信运营商、企业、终端和云计算等领域构筑了端到端的解决方案优势，为运营商客户、企业客户和消费者提供有竞争力的ICT解决方案、产品和服务，并致力于使能未来信息社会、构建更美好的全联接世界。2013年，华为首超全球第一大电信设备商爱立信，排名《财富》世界500强第315位。', '项目采用6台变压器供电，（永和）项目采用5台变压器供电...', NULL, NULL, NULL, 'uploads/article/20180928/5bad0406d90a92.44826062.jpg', NULL, '2018-09-28 00:23:34', '2018-09-29 14:07:39', 0, 2, 1, NULL, '2018-09-28 00:21:24', '2013年至今的电气维保；\r\n2013年1月东莞市黄埔海关驻凤岗办事处高低压配电工程；\r\n2015年7月东莞市黄埔海关驻凤岗办事处电房线路改造。', '东莞石龙', 50, NULL);
+INSERT INTO `hl_article` VALUES (2, '电气设备如何维护保养？', '电气设备的危险、有害因素识别应紧密结合工艺的要求和生产环境的状况来进行，一般可考虑从以下几方面进行识别：<br />\r\n1）电气设备的工作环境是否属于爆炸和火灾危险环境，是否属于粉尘、潮湿或腐蚀环境。在这些环境中工作时，对电气设备的相应要求是否满足。<br />\r\n2）电气设备是否具有国家指定机构的安全认证标志，特别是防爆电器的防爆等级。<br />\r\n3）电气设备是否为国家颁布的淘汰产品。<br />', '注意干燥，保持表面无尘土，防晒，过多的太阳辐射对器具表面不好。注意长期不用的时候拔掉开关，以防火灾...', NULL, NULL, NULL, 'uploads/article/20180929/5bae58de6c8d30.37130527.jpg', NULL, '2018-09-29 00:37:50', '2018-09-29 14:07:38', 5, 4, 1, '中能电力', '2018-09-29 00:36:59', NULL, NULL, 50, NULL);
+INSERT INTO `hl_article` VALUES (3, '电力施工', '依据客户需求、GB规范与当地供电部门要求设计配电方案。<br />\r\n将满足客户需求、GB规范与当地供电部门要求的设计图纸送至供电部门审核，协助客户取得《供用电负荷协议》的批复。<br />\r\n依据审批设计图纸，对高低压配电设备、材料进行采购，所有设备与材料均应满足设计与GB质量标准要求。<br />\r\n项目检测<br />\r\n东南电工项目检测 所有电气设备安装结束后按电气设备交接试验标准进行单体试验、分系统调试，对整个工程的各种参数的测试和使之处于安全、高效、可靠的运行状态。<br />\r\n当工程达到竣工验收条件时，完成自评自查工作，填写工程竣工报验单，同时将完整的竣工资料及竣工验收报告，申请竣工验收。检查验收合格，向当地供电部门报竣工验收手续。检查验收不合格，在限定的时间内整改完毕并重新检查验收。<br />', '高低压配电工程是将电能经过生产、传输，最终得以分...', NULL, NULL, NULL, 'uploads/article/20180929/5bae60b39508a7.21387667.jpg', NULL, '2018-09-29 01:11:15', '2018-09-29 14:07:38', 3, 5, 1, '中能电力', '2018-09-29 01:10:24', NULL, NULL, 50, NULL);
+INSERT INTO `hl_article` VALUES (4, '营业执照', NULL, NULL, NULL, NULL, NULL, 'uploads/article/20180929/5bae686170b2c2.66340531.jpg', NULL, '2018-09-29 01:42:27', '2018-09-29 14:07:37', 0, 7, 1, '中能电力', '2018-09-29 01:42:08', NULL, NULL, 50, 'uploads/article/20180929/5bae68616b58e1.10695977.jpg');
 
 -- ----------------------------
 -- Table structure for hl_article_category
@@ -7437,10 +7569,10 @@ INSERT INTO `hl_article_category` VALUES (2, 1, '市政建设用电', NULL, NULL
 INSERT INTO `hl_article_category` VALUES (3, 0, '企业动态', NULL, NULL, NULL, NULL, NULL, NULL, 'uploads/article/20180929/2f1b8d5932ae7ecdb0bffba66486c85f.jpg', NULL, 'news', 3, '2018-09-29 00:34:50', '2018-09-29 01:10:20', NULL, 'NEWS', NULL, 'uploads/article/20180929/018dbab9d253d6c70516207623dc16ce.jpg', NULL, NULL, NULL, NULL);
 INSERT INTO `hl_article_category` VALUES (4, 3, '公司新闻', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'news', 4, '2018-09-29 00:35:11', '2018-09-29 01:10:20', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `hl_article_category` VALUES (5, 0, '主营业务', NULL, NULL, NULL, NULL, NULL, NULL, 'uploads/article/20180929/0ae0fe145bff6f8a73dd601f400cb2f2.jpg', NULL, 'business', 5, '2018-09-29 01:10:17', '2018-09-29 01:10:20', NULL, 'MAIN BUSINESS', NULL, 'uploads/article/20180929/e6493bad2ef2a3f90740ad41de59feb6.jpg', NULL, NULL, NULL, NULL);
-INSERT INTO `hl_article_category` VALUES (6, 0, '关于中能', NULL, NULL, NULL, NULL, NULL, NULL, 'uploads/article/20180929/a9f178a5e3dd66b7ffdb7c491a10f744.jpg', NULL, NULL, 0, '2018-09-29 01:32:20', '2018-09-29 01:32:20', NULL, 'ABOUT US', NULL, 'uploads/article/20180929/42d729b52f3331204374bf3dc77898b4.jpg', NULL, NULL, NULL, NULL);
-INSERT INTO `hl_article_category` VALUES (7, 6, '荣誉资质', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'honor', 0, '2018-09-29 01:32:46', '2018-09-29 01:32:46', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `hl_article_category` VALUES (8, 6, '公司简介', NULL, '<div class=\"box\">\r\n	<div class=\"w\">\r\n		<h3>\r\n			广州中能电力建设工程有限公司<em>Guangzhou Zhongneng Power Construction Engineering Co., Ltd.</em>\r\n		</h3>\r\n		<p>\r\n			广州中能电力建设工程有限公司是广州市工商局注册的法人单位，注册资金5000万。公司经营范围：输、变、配电工程及设计服务；变（配）电站，输（配）电线路运维、检修、试验；通信系统运维；电力集抄系统运维；新能源（含电动汽车充电站、充电桩）建设、运维。<br />\r\n<br />\r\n公司设有总经理室、办公室、财务室、工程部，现有员工98人，其中高级工程师5人，中级职称人员20人，一级建造师3人，二级建造师10人，特种作业人员60人。<br />\r\n公司成立以来，相继取得广东省住建厅、国家能监局输变电工程专业承包叁级、施工劳务分包不分等级资质证书；承装、承修、承试三级电力设施许可证、ISO9001质量体系认证、ISO14001环境管理体系认证、OHSAS18001职业安全健康管理体系认证以及GB/T50430工程建设施工企业管理规范。历年均荣获广州市工商行政管理局颁发《广东省守合同重信用企业》证书。\r\n		</p>\r\n	</div>\r\n	<div class=\"pic\">\r\n		<img src=\"/resources/home/images/pic14.png\" />\r\n	</div>\r\n</div>\r\n<div class=\"box2\">\r\n	<img src=\"/resources/home/images/pic15.jpg\" />\r\n</div>\r\n<div class=\"box box3\">\r\n	<div class=\"w\">\r\n		<p>\r\n			“技术精湛、服务优质、管理高效”是公司的经营理念。近年来，先后承接国家电网公司湖北省电力有限公司输、变、配电工程，三峡总公司溇水水电公司输、变、配电工程及运维服务，恒大地产、万达集团房地产配电工程。公司竭诚为广大电力客户提供全过程服务，通过全体员工的共同努力，公司承建的工程质量合格率100%，合同履约率100%，深得广大客户支持与厚爱。<br />\r\n<br />\r\n秉承“服务好、管理好、形象好”的宗旨，严格遵守优质、高效、安全的原则，公司先后获得国家电网公司“抗冰抢险保供电”优秀施工企业，三峡总公司“重质量保安全守信誉”先进单位。展望未来，公司将进一步发挥技术优势、管理优势和服务优势，不断加强管理创新、科技创新、服务创新，持续提高综合实力，为广大客户提供不歇的能源动力。\r\n		</p>\r\n	</div>\r\n</div>', NULL, NULL, NULL, NULL, NULL, NULL, 'detail', 0, '2018-09-29 02:18:55', '2018-09-29 02:18:55', NULL, 'ABOUT US', NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `hl_article_category` VALUES (9, 0, '联系中能', NULL, '网站维护人员联系方式：QQ：2995353088 微信号：zhongnengdianli 电话：13487222870', NULL, NULL, NULL, NULL, 'uploads/article/20180929/379dfb29437ba6d1840980d397e31fb3.jpg', NULL, 'contact_us', 0, '2018-09-29 02:23:53', '2018-09-29 02:35:30', NULL, 'CONTACT US', NULL, 'uploads/article/20180929/26bef13aa67ba0662a22fc833eb5a50a.jpg', NULL, NULL, NULL, NULL);
+INSERT INTO `hl_article_category` VALUES (6, 0, '关于中能', NULL, NULL, '广州中能电力建设工程有限公司是广州市工商局注册的法人单位，注册资金5000万。“技术精湛、服务优质、管理高效”是公司的经营理念。\r\n秉承“服务好、管理好、形象好”的宗旨，严格遵守优质、高效、安全的原则，公司先...', NULL, NULL, NULL, 'uploads/article/20180929/a9f178a5e3dd66b7ffdb7c491a10f744.jpg', NULL, NULL, 6, '2018-09-29 01:32:20', '2018-09-29 14:14:00', NULL, 'ABOUT US', NULL, 'uploads/article/20180929/42d729b52f3331204374bf3dc77898b4.jpg', NULL, NULL, NULL, NULL);
+INSERT INTO `hl_article_category` VALUES (7, 6, '荣誉资质', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'honor', 8, '2018-09-29 01:32:46', '2018-09-29 14:14:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `hl_article_category` VALUES (8, 6, '公司简介', NULL, '<div class=\"box\">\r\n	<div class=\"w\">\r\n		<h3>\r\n			广州中能电力建设工程有限公司<em>Guangzhou Zhongneng Power Construction Engineering Co., Ltd.</em>\r\n		</h3>\r\n		<p>\r\n			广州中能电力建设工程有限公司是广州市工商局注册的法人单位，注册资金5000万。公司经营范围：输、变、配电工程及设计服务；变（配）电站，输（配）电线路运维、检修、试验；通信系统运维；电力集抄系统运维；新能源（含电动汽车充电站、充电桩）建设、运维。<br />\r\n<br />\r\n公司设有总经理室、办公室、财务室、工程部，现有员工98人，其中高级工程师5人，中级职称人员20人，一级建造师3人，二级建造师10人，特种作业人员60人。<br />\r\n公司成立以来，相继取得广东省住建厅、国家能监局输变电工程专业承包叁级、施工劳务分包不分等级资质证书；承装、承修、承试三级电力设施许可证、ISO9001质量体系认证、ISO14001环境管理体系认证、OHSAS18001职业安全健康管理体系认证以及GB/T50430工程建设施工企业管理规范。历年均荣获广州市工商行政管理局颁发《广东省守合同重信用企业》证书。\r\n		</p>\r\n	</div>\r\n	<div class=\"pic\">\r\n		<img src=\"/resources/home/images/pic14.png\" />\r\n	</div>\r\n</div>\r\n<div class=\"box2\">\r\n	<img src=\"/resources/home/images/pic15.jpg\" />\r\n</div>\r\n<div class=\"box box3\">\r\n	<div class=\"w\">\r\n		<p>\r\n			“技术精湛、服务优质、管理高效”是公司的经营理念。近年来，先后承接国家电网公司湖北省电力有限公司输、变、配电工程，三峡总公司溇水水电公司输、变、配电工程及运维服务，恒大地产、万达集团房地产配电工程。公司竭诚为广大电力客户提供全过程服务，通过全体员工的共同努力，公司承建的工程质量合格率100%，合同履约率100%，深得广大客户支持与厚爱。<br />\r\n<br />\r\n秉承“服务好、管理好、形象好”的宗旨，严格遵守优质、高效、安全的原则，公司先后获得国家电网公司“抗冰抢险保供电”优秀施工企业，三峡总公司“重质量保安全守信誉”先进单位。展望未来，公司将进一步发挥技术优势、管理优势和服务优势，不断加强管理创新、科技创新、服务创新，持续提高综合实力，为广大客户提供不歇的能源动力。\r\n		</p>\r\n	</div>\r\n</div>', NULL, NULL, NULL, NULL, NULL, NULL, 'detail', 7, '2018-09-29 02:18:55', '2018-09-29 14:14:00', NULL, 'ABOUT US', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `hl_article_category` VALUES (9, 0, '联系中能', NULL, '网站维护人员联系方式：QQ：2995353088 微信号：zhongnengdianli 电话：13487222870', NULL, NULL, NULL, NULL, 'uploads/article/20180929/379dfb29437ba6d1840980d397e31fb3.jpg', NULL, 'contact_us', 9, '2018-09-29 02:23:53', '2018-09-29 14:14:00', NULL, 'CONTACT US', NULL, 'uploads/article/20180929/26bef13aa67ba0662a22fc833eb5a50a.jpg', NULL, NULL, NULL, NULL);
 
 -- ----------------------------
 -- Table structure for hl_category
@@ -7486,7 +7618,7 @@ CREATE TABLE `hl_config`  (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `name`(`name`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 91 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 86 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of hl_config
@@ -7535,7 +7667,12 @@ CREATE TABLE `hl_link`  (
   `updated_at` timestamp NULL DEFAULT NULL,
   `url` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'url',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = MyISAM AUTO_INCREMENT = 10 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = MyISAM AUTO_INCREMENT = 11 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of hl_link
+-- ----------------------------
+INSERT INTO `hl_link` VALUES (10, '百度', 0, '2018-09-29 14:12:40', '2018-09-29 14:12:40', 'https://www.baidu.com/');
 
 -- ----------------------------
 -- Table structure for hl_migrations
@@ -7615,17 +7752,30 @@ CREATE TABLE `hl_nav`  (
   `type` int(11) NULL DEFAULT 1 COMMENT '类型，1-头部，2-尾部,3-banner,4-底部',
   `ico` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '图标',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = MyISAM AUTO_INCREMENT = 196 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = MyISAM AUTO_INCREMENT = 209 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of hl_nav
 -- ----------------------------
 INSERT INTO `hl_nav` VALUES (1, 0, '首页', 0, NULL, NULL, '/', 0, 1, NULL);
-INSERT INTO `hl_nav` VALUES (191, NULL, '主营业务', 0, NULL, NULL, NULL, 0, 1, NULL);
+INSERT INTO `hl_nav` VALUES (191, NULL, '主营业务', 0, NULL, NULL, '/category/5', 0, 1, NULL);
 INSERT INTO `hl_nav` VALUES (192, NULL, '成功案例', 0, NULL, NULL, NULL, 0, 1, NULL);
-INSERT INTO `hl_nav` VALUES (193, NULL, '企业动态', 0, NULL, NULL, NULL, 0, 1, NULL);
-INSERT INTO `hl_nav` VALUES (194, NULL, '关于中能', 0, NULL, NULL, NULL, 0, 1, NULL);
-INSERT INTO `hl_nav` VALUES (195, NULL, '联系中能', 0, NULL, NULL, NULL, 0, 1, NULL);
+INSERT INTO `hl_nav` VALUES (193, NULL, '企业动态', 0, NULL, NULL, '/category/3', 0, 1, NULL);
+INSERT INTO `hl_nav` VALUES (194, NULL, '关于中能', 0, NULL, NULL, '/category/8', 0, 1, NULL);
+INSERT INTO `hl_nav` VALUES (195, NULL, '联系中能', 0, NULL, NULL, '/category/9', 0, 1, NULL);
+INSERT INTO `hl_nav` VALUES (196, 193, '公司新闻', 0, NULL, NULL, '/category/4', 0, 1, NULL);
+INSERT INTO `hl_nav` VALUES (197, 194, '公司简介', 0, NULL, NULL, '/category/8', 0, 1, NULL);
+INSERT INTO `hl_nav` VALUES (198, 194, '荣誉资质', 0, NULL, NULL, '/category/7', 0, 1, NULL);
+INSERT INTO `hl_nav` VALUES (199, NULL, '中南电力首页', 0, NULL, NULL, NULL, 0, 2, NULL);
+INSERT INTO `hl_nav` VALUES (200, NULL, '主营业务', 0, NULL, NULL, NULL, 0, 2, NULL);
+INSERT INTO `hl_nav` VALUES (201, NULL, '工程案例', 0, NULL, NULL, NULL, 0, 2, NULL);
+INSERT INTO `hl_nav` VALUES (202, NULL, '合作客户', 0, NULL, NULL, NULL, 0, 2, NULL);
+INSERT INTO `hl_nav` VALUES (203, NULL, '公司简介', 0, NULL, NULL, NULL, 0, 2, NULL);
+INSERT INTO `hl_nav` VALUES (204, NULL, '荣誉资质', 0, NULL, NULL, NULL, 0, 2, NULL);
+INSERT INTO `hl_nav` VALUES (205, NULL, '企业实景', 0, NULL, NULL, NULL, 0, 2, NULL);
+INSERT INTO `hl_nav` VALUES (206, NULL, '发展历程', 0, NULL, NULL, NULL, 0, 2, NULL);
+INSERT INTO `hl_nav` VALUES (207, NULL, '企业动态', 0, NULL, NULL, NULL, 0, 2, NULL);
+INSERT INTO `hl_nav` VALUES (208, NULL, '联系我们', 0, NULL, NULL, NULL, 0, 2, NULL);
 
 -- ----------------------------
 -- Table structure for hl_password_resets

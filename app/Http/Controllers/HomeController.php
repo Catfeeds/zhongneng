@@ -25,33 +25,6 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(){
-        
-        $index_1_cate = ArticleCategory::find(379);
-        $index_1 = Article::ArticleList([
-            'cate_id_in'=>sub_cate_in(379),
-            'order'=>'is_top',
-            'sort'=>'DESC',
-            'take'=>6,
-        ]);
-     
-        $index_2_cate = ArticleCategory::find(389);
-
-        $index_3 = Article::ArticleList([
-            'cate_id'=>385,
-            'order'=>'is_top',
-            'sort'=>'DESC',
-            'take'=>8,
-        ]);
-        $index_3_cate = ArticleCategory::find(385);
-
-        $assign = [
-            'index_1' => $index_1,
-            'index_1_cate' => $index_1_cate,
-            'index_2_cate' => $index_2_cate,
-            'index_3'      => $index_3,
-            'index_3_cate' => $index_3_cate,
-            'nav_index'=>true,
-        ];
         if(isMobile()){
             return view('mobile.home',$assign);
         }else{

@@ -26,7 +26,7 @@ class ApplyController extends Controller
     public function index()
     {
         return Admin::content(function (Content $content){
-            $content->header('活动报名');
+            $content->header('在线咨询');
             $content->body($this->grid());
         });
     }
@@ -40,7 +40,7 @@ class ApplyController extends Controller
     public function edit($id)
     {
         return Admin::content(function (Content $content) use ($id) {
-            $content->header('活动报名');
+            $content->header('在线咨询');
             $content->body($this->form()->edit($id));
         });
     }
@@ -53,7 +53,7 @@ class ApplyController extends Controller
     public function create()
     {
         return Admin::content(function (Content $content) {
-            $content->header('活动报名');
+            $content->header('在线咨询');
             $content->body($this->form());
         });
     }
@@ -68,7 +68,7 @@ class ApplyController extends Controller
 
         return Admin::grid(Apply::class, function (Grid $grid) use ($request){
 
-            // $grid->disableExport();//禁止导出
+            $grid->disableExport();//禁止导出
             $grid->disableFilter();//禁止筛选
             $grid->disableCreateButton();//禁止创建按钮
             $grid->disableActions();//禁止操作列
@@ -76,16 +76,16 @@ class ApplyController extends Controller
                 $tools->batch(function ($batch) {
                     $batch->disableDelete();
                 });
-                $tools->append('<div class="btn-group upload_btn pull-right" style="margin-right: 10px">
-                                    <form method="post" action="'.url("admin/apply-upload").'" enctype="multipart/form-data">
-                                        <div class="btn btn-sm btn-twitter">
-                                            <i class="fa fa-upload"></i> 导入 
-                                            <input type="file" name="upload_file" class="upload_file" >
-                                            <input type="hidden" name="activity_id" value="'.$_GET['activity_id'].'">
-                                            <input type="hidden" name="_token" value="'.csrf_token().'">
-                                        </div>
-                                    </form>
-                                </div>');
+                // $tools->append('<div class="btn-group upload_btn pull-right" style="margin-right: 10px">
+                //                     <form method="post" action="'.url("admin/apply-upload").'" enctype="multipart/form-data">
+                //                         <div class="btn btn-sm btn-twitter">
+                //                             <i class="fa fa-upload"></i> 导入 
+                //                             <input type="file" name="upload_file" class="upload_file" >
+                //                             <input type="hidden" name="activity_id" value="'.$_GET['activity_id'].'">
+                //                             <input type="hidden" name="_token" value="'.csrf_token().'">
+                //                         </div>
+                //                     </form>
+                //                 </div>');
             });
 
             $grid->exporter(new ApplyExcel());
@@ -102,8 +102,9 @@ class ApplyController extends Controller
             //     }
             // });
             $grid->column('email',"邮箱");
-            $grid->column('gongsi',"公司");
-            $grid->ActivityTo()->title('活动');
+            $grid->column('address',"地址");
+            $grid->column('remark',"备注");
+            // $grid->ActivityTo()->title('活动');
 
             $states = [
                 'on'  => ['value' => 1, 'text' => '处理', 'color' => 'success'],
