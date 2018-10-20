@@ -12,8 +12,8 @@
                 <h3>{{$info['title']}}</h3>
                 <p>
                     项目地点：{{$info['address']}}<br /><br />
-                    项目简介：{!!nl2br($info['desc'])!!}<br /><br />
-                    工程概况：<br />
+                    项目内容：{!!nl2br($info['desc'])!!}<br /><br />
+                    竣工时间：<br />
                     {!!nl2br($info['desc2'])!!}
                 </p>
             </div>

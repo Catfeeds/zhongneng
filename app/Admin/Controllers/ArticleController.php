@@ -177,7 +177,7 @@ class ArticleController extends Controller
             // $form->image('img2','图片2')->move('/uploads/article/'.date('Ymd'))->uniqueName()->help('品牌架构图片量尺寸 71 X 71');
             // $form->text('alt2','图片2alt');
             // $form->currency('price','价格');
-            // $form->text('url', '链接');
+            $form->text('url', '链接');
             $form->number('click','人气');
             $form->text('editor','来源')->default('中能电力');
             $form->textarea('desc2','工程概况')->rows(3);

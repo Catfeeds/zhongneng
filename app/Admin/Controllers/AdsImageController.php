@@ -104,14 +104,16 @@ class AdsImageController extends Controller
             $form->text('alt', 'alt');
             $form->number('order', '排序');
             $form->text('url', '链接');
-            $form->text('btn_title', '按钮名称');
+            // $form->text('btn_title', '按钮名称');
             $form->image('image','图片')->move('/uploads/images/'.date('Ymd'))->uniqueName();
+            $form->image('image2','图片2')->move('/uploads/images/'.date('Ymd'))->uniqueName();
 
             // $form->setAction('/admin/ads-image');//提交地址
 
             $form->saving(function (Form $form) {
                 $AdsPosition = AdsPosition::find($form->cate_id);
                 $form->image = Image($form->image,$AdsPosition['width'],$AdsPosition['height'],"uploads/images/".date("Ymd")."/");
+                $form->image2 = Image($form->image2,$AdsPosition['width'],$AdsPosition['height'],"uploads/images/".date("Ymd")."/");
             });
             $form->saved(function (Form $form) {
                 admin_toastr(trans('admin.update_succeeded'));

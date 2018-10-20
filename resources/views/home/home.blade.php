@@ -71,7 +71,7 @@ $banner = ads_image(35);
                         <h3>{{$v['title']}}</h3>
                         <p class="dot">
                             项目地点：{{$v['address']}}<br />
-                            项目简介：{!!nl2br($v['desc'])!!}
+                            项目内容：{!!nl2br($v['desc'])!!}
                         </p>
                     </div>
                 </a></div>
@@ -85,6 +85,7 @@ $banner = ads_image(35);
     //获取推荐文章
     $index_3 = \App\Models\ArticleCategory::find(6);
     $index_3_i1 = ads_image(37);
+    $index_3_i2 = ads_image(38,4);
 ?>
 <div class="index_3">
     <div class="layout clearfix">
@@ -96,10 +97,19 @@ $banner = ads_image(35);
                 </p>
                 <a href="{{URL('category/8')}}" class="more">more</a>
                 <ul class="clearfix">
-                    <li class="li1"><a href="{{url('category/7')}}">荣誉资质<i></i></a></li>
-                    <li class="li2"><a href="#"><i></i>发展历程</a></li>
-                    <li class="li3"><a href="#">企业实景<i></i></a></li>
-                    <li class="li4"><a href="#"><i></i>企业文化</a></li>
+                    @foreach($index_3_i2 as $k=>$v)
+                    <style type="text/css">
+                        .index_3 .fl li.li{{$k+1}} i{background: url({{asset($v['image'])}}) no-repeat;}
+                        .index_3 .fl li.li{{$k+1}}:hover i{background: url({{asset($v['image2'])}}) no-repeat;}
+                    </style>
+                    <li class="li{{$k+1}}"><a @if(!empty($v['url'])) href="{{$v['url']}}" @endif>
+                        @if($k%2==0)
+                            {{$v['title']}}<i></i>
+                        @else
+                            <i></i>{{$v['title']}}
+                        @endif
+                    </a></li>
+                    @endforeach
                 </ul>
             </div>
         </div>
@@ -195,6 +205,28 @@ $banner = ads_image(35);
             <div class="pswp__caption">
                 <div class="pswp__caption__center"></div>
             </div>
+        </div>
+    </div>
+</div>
+<?php 
+    //获取推荐文章
+    $index_6 = \App\Models\ArticleCategory::find(20);
+    $index_6['article'] = \App\Models\Article::ArticleList([
+        'cate_id_in' => sub_cate_in(20),
+        'take'=>9,
+        'is_top'=>1,
+    ]);
+?>
+<div class="index_6">
+    <div class="layout">
+        <div class="title">{{$index_6['title']}}<p>{{$index_6['en_title']}}</p></div>
+        <div class="three">
+            @foreach($index_6['article'] as $v)
+            <div><a @if(!empty($v['url'])) href="{{$v['url']}}" @endif target="_blank" class="box">
+                <div class="pich"><img src="{{asset($v['img'])}}" alt="{{$v['alt']}}"></div>
+                <p>{{$v['title']}}</p>
+            </a></div>
+            @endforeach
         </div>
     </div>
 </div>

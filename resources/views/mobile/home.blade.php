@@ -66,6 +66,7 @@ $banner = ads_image(36);
     //获取推荐文章
     $index_3 = \App\Models\ArticleCategory::find(6);
     $index_3_i1 = ads_image(37);
+    $index_3_i2 = ads_image(39,4);
 ?>
 <div class="index_3">
     <div class="title">{{$index_3['title']}}<p>{{$index_3['en_title']}}</p></div>
@@ -74,10 +75,9 @@ $banner = ads_image(36);
     </div>
     <a href="{{URL('category/8')}}" class="more">more</a>
     <ul class="clearfix">
-        <li><a href="{{url('category/7')}}"><img src="/resources/mobile/images/ic1.png"></a></li>
-        <li><img src="/resources/mobile/images/ic2.png"></li>
-        <li><img src="/resources/mobile/images/ic3.png"></li>
-        <li><img src="/resources/mobile/images/ic4.png"></li>
+        @foreach($index_3_i2 as $v)
+        <li><a @if(!empty($v['url'])) href="{{$v['url']}}" @endif><img src="{{asset($v['image'])}}" alt="{{$v['alt']}}"></a></li>
+        @endforeach
     </ul>
 </div>
 <?php 

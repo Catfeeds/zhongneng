@@ -15,7 +15,7 @@
                         <h3>{{$v['title']}}</h3>
                         <p class="dot">
                             项目地点：{{$v['address']}}<br />
-                            项目简介：{!!nl2br($v['desc'])!!}
+                            项目内容：{!!nl2br($v['desc'])!!}
                         </p>
                     </div>
                 </a></li>
